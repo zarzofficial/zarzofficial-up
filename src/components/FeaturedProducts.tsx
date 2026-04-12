@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../data/products";
 
@@ -13,9 +14,28 @@ const reviewCounts = [221, 198, 16, 31];
 export function FeaturedProducts() {
   const featuredIds = ["إنشاء-متاجر-إلكترونية", "شات-جي-بي-تي-بلس", "متابعين-إنستغرام", "متابعين-تيك-توك"];
   const featured = featuredIds.map(id => products.find(p => p.id === id)).filter(Boolean) as typeof products;
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [shouldRenderCards, setShouldRenderCards] = useState(false);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0]?.isIntersecting) return;
+        setShouldRenderCards(true);
+        observer.disconnect();
+      },
+      { rootMargin: "320px 0px" },
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="py-20 md:py-28 px-6 md:px-12 bg-background relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 md:py-28 px-6 md:px-12 bg-background relative overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[60px] md:blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[50px] md:blur-[100px] pointer-events-none"></div>
 
@@ -27,7 +47,8 @@ export function FeaturedProducts() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          {featured.map((product, index) => {
+          {shouldRenderCards
+            ? featured.map((product, index) => {
             const cat = categoryMap[product.category] || { label: product.category, color: "#d0bcff" };
             return (
               <Link
@@ -45,6 +66,9 @@ export function FeaturedProducts() {
                     src={product.image}
                     alt={product.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     referrerPolicy="no-referrer"
                   />
                   {/* Rating Badge */}
@@ -94,7 +118,14 @@ export function FeaturedProducts() {
                 </div>
               </Link>
             );
-          })}
+          })
+            : featured.map((product) => (
+                <div
+                  key={product.id}
+                  aria-hidden="true"
+                  className="rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low/70 min-h-[360px]"
+                />
+              ))}
         </div>
       </div>
     </section>

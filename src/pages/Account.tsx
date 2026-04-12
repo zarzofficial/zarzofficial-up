@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import { User, RefreshCw, Package, LogOut } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { useAuth } from "../lib/AuthContext";
@@ -33,6 +34,7 @@ export function Account() {
   // Orders State
   const [orders, setOrders] = useState<any[]>([]);
   const [loadingOrders, setLoadingOrders] = useState(false);
+  const ordersScrollRef = useRef<HTMLDivElement | null>(null);
 
   const fetchOrders = async () => {
     if (!currentUser) return;
@@ -69,6 +71,14 @@ export function Account() {
       fetchOrders();
     }
   }, [currentUser]);
+
+  const orderVirtualizer = useVirtualizer({
+    count: orders.length,
+    getScrollElement: () => ordersScrollRef.current,
+    estimateSize: () => 92,
+    overscan: 5,
+    getItemKey: (index) => orders[index]?.id ?? index,
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,26 +153,40 @@ export function Account() {
               </button>
             </div>
 
-            <div className="flex-1 flex flex-col overflow-y-auto pr-2 custom-scrollbar">
+            <div ref={ordersScrollRef} className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
               {orders.length === 0 ? (
                  <div className="flex flex-col items-center justify-center text-center py-12 m-auto">
                     <Package className="h-16 w-16 text-muted-foreground mb-4 opacity-50" />
                     <p className="text-lg text-muted-foreground mb-6 font-sans">لا توجد طلبات حديثة.</p>
                  </div>
               ) : (
-                 <div className="space-y-4">
-                   {orders.map(order => (
-                     <div key={order.id} className="bg-background/40 border border-white/5 p-4 rounded-xl flex justify-between items-center hover:border-primary/30 transition-all">
-                       <div>
-                         <p className="font-bold text-sm">طلب #{order.orderNumber || order.id.slice(0,6)}</p>
-                         <p className="text-xs text-muted-foreground">{new Date(order.date?.toDate?.() || order.date).toLocaleDateString('ar-EG')}</p>
+                 <div className="relative w-full" style={{ height: `${orderVirtualizer.getTotalSize()}px` }}>
+                   {orderVirtualizer.getVirtualItems().map((virtualOrder) => {
+                     const order = orders[virtualOrder.index];
+
+                     if (!order) return null;
+
+                     return (
+                       <div
+                         key={order.id}
+                         ref={orderVirtualizer.measureElement}
+                         data-index={virtualOrder.index}
+                         className="absolute left-0 top-0 w-full pb-4"
+                         style={{ transform: `translateY(${virtualOrder.start}px)` }}
+                       >
+                         <div className="bg-background/40 border border-white/5 p-4 rounded-xl flex justify-between items-center hover:border-primary/30 transition-all">
+                           <div>
+                             <p className="font-bold text-sm">طلب #{order.orderNumber || order.id.slice(0,6)}</p>
+                             <p className="text-xs text-muted-foreground">{new Date(order.date?.toDate?.() || order.date).toLocaleDateString('ar-EG')}</p>
+                           </div>
+                           <div className="text-left">
+                             <p className="font-bold text-primary">{order.total}</p>
+                             <p className="text-xs px-2 py-1 bg-white/5 rounded-full mt-1 border border-white/10">{order.status === 'pending' ? 'جاري المعالجة' : order.status}</p>
+                           </div>
+                         </div>
                        </div>
-                       <div className="text-left">
-                         <p className="font-bold text-primary">{order.total}</p>
-                         <p className="text-xs px-2 py-1 bg-white/5 rounded-full mt-1 border border-white/10">{order.status === 'pending' ? 'جاري المعالجة' : order.status}</p>
-                       </div>
-                     </div>
-                   ))}
+                     );
+                   })}
                  </div>
               )}
             </div>
