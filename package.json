@@ -6,12 +6,12 @@
   "homepage": "https://zarzofficial.github.io/zarzofficial-up/",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && node -e \"require('fs').copyFileSync('dist/index.html', 'dist/404.html')\"",
+    "build": "vite build && node -e \"const fs=require('fs');fs.copyFileSync('docs/index.html','docs/404.html');fs.closeSync(fs.openSync('docs/.nojekyll','w'));\"",
     "preview": "vite preview",
-    "clean": "rm -rf dist",
+    "clean": "node -e \"const fs=require('fs');['dist','docs'].forEach((dir)=>fs.rmSync(dir,{recursive:true,force:true}));\"",
     "lint": "tsc --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "node -e \"console.log('GitHub Pages publishes from main/docs. Push main after build.')\""
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
