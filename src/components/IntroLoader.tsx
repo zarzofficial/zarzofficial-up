@@ -4,18 +4,28 @@ export function IntroLoader({ onFinished }: { onFinished: () => void }) {
   const [phase, setPhase] = useState<"loading" | "fadeout" | "done">("loading");
 
   useEffect(() => {
-    // Minimum display: 800ms so the brand registers, max: waits for DOM ready
+    let minTimePassed = false;
+    let isLoaded = document.readyState === "complete";
+
+    const tryFinish = () => {
+      if (minTimePassed && isLoaded) {
+        setPhase("fadeout");
+      }
+    };
+
     const minTimer = setTimeout(() => {
-      setPhase("fadeout");
-    }, 800);
+      minTimePassed = true;
+      tryFinish();
+    }, 3000);
 
     const handleLoad = () => {
-      // If already past minimum, fade out immediately
-      setTimeout(() => setPhase("fadeout"), 100);
+      isLoaded = true;
+      tryFinish();
     };
 
     if (document.readyState === "complete") {
-      // Already loaded — just respect the minimum
+      isLoaded = true;
+      tryFinish();
     } else {
       window.addEventListener("load", handleLoad);
     }

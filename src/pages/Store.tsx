@@ -84,7 +84,7 @@ export function Store() {
               <img 
                 alt="digital abstract" 
                 className="w-full h-full object-cover mix-blend-screen" 
-                src="/store-header.png"
+                src={import.meta.env.BASE_URL + "store-header.png"}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
             </div>
@@ -163,20 +163,20 @@ export function Store() {
                           )}
                         </div>
                       </div>
-                      <div className="flex items-center gap-3 w-full">
+                      <div className="flex items-center gap-2 sm:gap-3 w-full">
                         <button 
                           disabled={product.outOfStock}
                           onClick={() => handleOrderNow(product)}
-                          className="flex-1 h-12 rounded-full primary-gradient text-sm md:text-base font-bold text-on-primary hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap shadow-md"
+                          className="flex-1 py-3 rounded-full primary-gradient text-[13px] sm:text-sm md:text-base font-bold text-on-primary hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md text-center"
                         >
                           اطلب الآن
                         </button>
                         <button 
                           disabled={product.outOfStock}
                           onClick={() => handleAddToCart(product)}
-                          className="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:scale-110 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shrink-0 shadow-sm"
+                          className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:scale-110 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shrink-0 shadow-sm"
                         >
-                          <span className="material-symbols-outlined text-xl">add_shopping_cart</span>
+                          <span className="material-symbols-outlined text-lg sm:text-xl">add_shopping_cart</span>
                         </button>
                       </div>
                     </div>
