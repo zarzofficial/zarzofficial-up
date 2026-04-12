@@ -82,7 +82,7 @@ export default function App() {
   const handleIntroFinished = useCallback(() => setLoaded(true), []);
 
   return (
-    <Router>
+    <Router basename="/zarzofficial-up/">
       <DynamicTitle />
       <ScrollToTop />
       {!loaded && <IntroLoader onFinished={handleIntroFinished} />}
