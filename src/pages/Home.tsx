@@ -59,9 +59,9 @@ export function Home() {
 
           {/* Main Hero Text */}
           <div className="text-start flex-1 min-w-0">
-            <h1 className="text-[2rem] md:text-4xl xl:text-6xl font-black font-headline text-on-background leading-[1.1] md:leading-tight mb-3 md:mb-6 text-glow">
+            <h1 className="max-w-[18rem] text-[1.9rem] font-black font-headline text-on-background leading-[1.22] tracking-[-0.02em] sm:max-w-none sm:text-[2.35rem] sm:leading-[1.16] md:text-4xl md:leading-tight xl:text-6xl mb-3 md:mb-6 text-glow">
               تسوق كل ما تحتاجه في <br />
-              <span className="text-primary italic">مكان واحد</span>
+              <span className="mt-1 block text-primary not-italic md:mt-0 md:italic">مكان واحد</span>
             </h1>
             <p className="text-sm md:text-base xl:text-lg text-outline mb-5 md:mb-8 max-w-2xl leading-relaxed">
               مرحباً بك في زارز، وجهتك الأولى للخدمات الرقمية. نوفر لك شحن ألعاب فوري، اشتراكات الذكاء الاصطناعي، خدمات زيادة المتابعين، وتطوير المتاجر بأفضل الأسعار وأسرع تنفيذ.
