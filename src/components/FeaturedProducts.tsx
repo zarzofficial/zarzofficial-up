@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../data/products";
 
@@ -13,119 +12,90 @@ const reviewCounts = [221, 198, 16, 31];
 
 export function FeaturedProducts() {
   const featuredIds = ["إنشاء-متاجر-إلكترونية", "شات-جي-بي-تي-بلس", "متابعين-إنستغرام", "متابعين-تيك-توك"];
-  const featured = featuredIds.map(id => products.find(p => p.id === id)).filter(Boolean) as typeof products;
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [shouldRenderCards, setShouldRenderCards] = useState(false);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0]?.isIntersecting) return;
-        setShouldRenderCards(true);
-        observer.disconnect();
-      },
-      { rootMargin: "320px 0px" },
-    );
-
-    observer.observe(sectionRef.current);
-
-    return () => observer.disconnect();
-  }, []);
+  const featured = featuredIds.map((id) => products.find((product) => product.id === id)).filter(Boolean) as typeof products;
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 px-6 md:px-12 bg-background relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[60px] md:blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[50px] md:blur-[100px] pointer-events-none"></div>
+    <section className="relative overflow-hidden bg-background px-6 py-20 md:px-12 md:py-28">
+      <div className="pointer-events-none absolute top-0 right-1/4 h-[260px] w-[260px] rounded-full bg-primary/5 blur-[36px] md:h-[500px] md:w-[500px] md:blur-[120px]"></div>
+      <div className="pointer-events-none absolute bottom-0 left-1/3 h-[220px] w-[220px] rounded-full bg-tertiary/5 blur-[32px] md:h-[400px] md:w-[400px] md:blur-[100px]"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-14">
-          <span className="inline-block px-5 py-2 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-bold mb-6 backdrop-blur-md">الأكثر طلباً</span>
-          <h2 className="text-3xl md:text-5xl font-black font-headline mb-4 text-on-background">منتجات مميزة</h2>
-          <p className="text-base md:text-lg text-outline font-medium max-w-md mx-auto">اكتشف أكثر الخدمات طلباً لدينا</p>
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-14 text-center">
+          <span className="mb-6 inline-block rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-bold text-primary sm:backdrop-blur-md">
+            الأكثر طلباً
+          </span>
+          <h2 className="mb-4 font-headline text-3xl font-black text-on-background md:text-5xl">منتجات مميزة</h2>
+          <p className="mx-auto max-w-md text-base font-medium text-outline md:text-lg">اكتشف أكثر الخدمات طلباً لدينا</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          {shouldRenderCards
-            ? featured.map((product, index) => {
-            const cat = categoryMap[product.category] || { label: product.category, color: "#d0bcff" };
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+          {featured.map((product, index) => {
+            const category = categoryMap[product.category] || { label: product.category, color: "#d0bcff" };
+
             return (
               <Link
                 key={product.id}
                 to={`/products/${product.id}`}
-                className="group relative rounded-[1.5rem] overflow-hidden border border-outline-variant/10 bg-surface-container-low/80 hover:border-primary/30 transition-all duration-500 shadow-lg hover:shadow-[0_20px_50px_rgba(208,188,255,0.08)] flex flex-col hover:-translate-y-2"
+                className="group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low/80 shadow-sm md:shadow-lg md:transition-transform md:duration-300 md:hover:-translate-y-1 md:hover:border-primary/30 md:hover:shadow-[0_18px_40px_rgba(208,188,255,0.08)]"
               >
-                {/* Glow */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: `${cat.color}15` }}></div>
+                <div
+                  className="pointer-events-none absolute -top-10 -right-10 hidden h-40 w-40 rounded-full opacity-0 blur-[60px] transition-opacity duration-500 md:block md:group-hover:opacity-100"
+                  style={{ backgroundColor: `${category.color}15` }}
+                ></div>
 
-                {/* Image */}
-                <div className="relative w-full overflow-hidden bg-[#0c0a10]" style={{ aspectRatio: '4/3' }}>
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0c0a10] to-transparent z-10 pointer-events-none"></div>
+                <div className="relative h-56 w-full overflow-hidden bg-[#0c0a10] md:h-60">
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-[#0c0a10] to-transparent"></div>
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-300 md:group-hover:scale-[1.03]"
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Rating Badge */}
                   <div className="absolute top-3 left-3 z-20">
-                    <div className="bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-2.5 py-1 flex items-center gap-1">
-                      <span className="text-[#fbbf24] text-xs">★</span>
-                      <span className="text-white text-xs font-bold">{product.rating}</span>
+                    <div className="flex items-center gap-1 rounded-full border border-white/10 bg-black/60 px-2.5 py-1 sm:backdrop-blur-sm">
+                      <span className="text-xs text-[#fbbf24]">★</span>
+                      <span className="text-xs font-bold text-white">{product.rating}</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-1 text-right" dir="rtl">
-                  {/* Category + Reviews */}
-                  <div className="flex justify-between items-center mb-3">
+                <div className="flex flex-1 flex-col p-5 text-right" dir="rtl">
+                  <div className="mb-3 flex items-center justify-between">
                     <span
-                      className="text-xs font-bold px-3 py-1 rounded-full border"
+                      className="rounded-full border px-3 py-1 text-xs font-bold"
                       style={{
-                        color: cat.color,
-                        borderColor: `${cat.color}30`,
-                        backgroundColor: `${cat.color}10`,
+                        color: category.color,
+                        borderColor: `${category.color}30`,
+                        backgroundColor: `${category.color}10`,
                       }}
                     >
-                      {cat.label}
+                      {category.label}
                     </span>
-                    <span className="text-outline/60 text-xs font-medium">{reviewCounts[index]} تقييم</span>
+                    <span className="text-xs font-medium text-outline/60">{reviewCounts[index]} تقييم</span>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-[15px] md:text-base font-black text-on-surface mb-2.5 leading-snug line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="mb-2.5 line-clamp-2 text-[15px] font-black leading-snug text-on-surface transition-colors md:text-base md:group-hover:text-primary">
                     {product.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-xs text-outline leading-relaxed line-clamp-2 mb-4">
-                    {product.desc}
-                  </p>
+                  <p className="mb-4 line-clamp-2 text-xs leading-relaxed text-outline">{product.desc}</p>
 
-                  {/* Price + CTA */}
-                  <div className="flex justify-between items-center mt-auto pt-3 border-t border-outline-variant/10">
-                    <span className="text-primary font-black text-lg">{product.basePrice.toLocaleString()} <span className="text-xs font-medium text-outline">ج.س</span></span>
-                    <span className="text-xs font-bold text-primary/70 group-hover:text-primary transition-colors flex items-center gap-1">
+                  <div className="mt-auto flex items-center justify-between border-t border-outline-variant/10 pt-3">
+                    <span className="text-lg font-black text-primary">
+                      {product.basePrice.toLocaleString()} <span className="text-xs font-medium text-outline">ج.س</span>
+                    </span>
+                    <span className="flex items-center gap-1 text-xs font-bold text-primary/70 transition-colors md:group-hover:text-primary">
                       تفاصيل
-                      <span className="material-symbols-outlined text-sm transition-transform group-hover:-translate-x-1">arrow_back</span>
+                      <span className="material-symbols-outlined text-sm transition-transform md:group-hover:-translate-x-1">arrow_back</span>
                     </span>
                   </div>
                 </div>
               </Link>
             );
-          })
-            : featured.map((product) => (
-                <div
-                  key={product.id}
-                  aria-hidden="true"
-                  className="rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low/70 min-h-[360px]"
-                />
-              ))}
+          })}
         </div>
       </div>
     </section>
