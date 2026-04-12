@@ -106,7 +106,7 @@ export function Checkout() {
       </Link>
 
       {items.length === 0 ? (
-          <div className="text-center py-20 bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+          <div className="perf-panel text-center py-20 bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)]">
              <h2 className="text-2xl font-black mb-4 font-heading">السلة فارغة</h2>
              <Link to="/products">
                  <Button>الذهاب للمتجر</Button>
@@ -115,7 +115,7 @@ export function Checkout() {
       ) : (
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 space-y-8">
-          <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+          <div className="perf-panel bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
             <h2 className="text-2xl font-black mb-2 font-heading">إتمام <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">الطلب</span></h2>
             <p className="text-muted-foreground mb-8 font-sans">أرسل بياناتك الأساسية وسنكمل معك الطلب بسرعة عبر الواتساب أو الهاتف.</p>
 
@@ -154,7 +154,7 @@ export function Checkout() {
         </div>
 
         <div className="lg:col-span-1">
-          <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-[0_0_30px_rgba(0,0,0,0.5)] sticky top-24">
+          <div className="perf-panel bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-[0_0_30px_rgba(0,0,0,0.5)] sticky top-24">
             <h3 className="text-xl font-black mb-6 font-heading">إجمالي الطلب</h3>
             <div className="flex justify-between items-center mb-4 font-sans">
               <span className="text-muted-foreground">العناصر ({items.reduce((s,i)=>s+i.qty,0)})</span>

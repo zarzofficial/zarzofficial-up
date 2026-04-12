@@ -36,7 +36,7 @@ export function FeaturedProducts() {
               <Link
                 key={product.id}
                 to={`/products/${product.id}`}
-                className="group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low/80 shadow-sm md:shadow-lg md:transition-transform md:duration-300 md:hover:-translate-y-1 md:hover:border-primary/30 md:hover:shadow-[0_18px_40px_rgba(208,188,255,0.08)]"
+                className="perf-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low/80 shadow-sm md:shadow-lg md:transition-transform md:duration-300 md:hover:-translate-y-1 md:hover:border-primary/30 md:hover:shadow-[0_18px_40px_rgba(208,188,255,0.08)]"
               >
                 <div
                   className="pointer-events-none absolute -top-10 -right-10 hidden h-40 w-40 rounded-full opacity-0 blur-[60px] transition-opacity duration-500 md:block md:group-hover:opacity-100"

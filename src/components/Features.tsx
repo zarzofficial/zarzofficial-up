@@ -43,7 +43,7 @@ export function Features() {
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="p-6 rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 text-center relative overflow-hidden group hover:border-primary/50 transition-all duration-300">
+              <div className="perf-card p-6 rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 text-center relative overflow-hidden group hover:border-primary/50 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-2 relative z-10 font-heading">
                   +1000
@@ -52,7 +52,7 @@ export function Features() {
                   عميل سعيد
                 </div>
               </div>
-              <div className="p-6 rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 text-center relative overflow-hidden group hover:border-secondary/50 transition-all duration-300">
+              <div className="perf-card p-6 rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 text-center relative overflow-hidden group hover:border-secondary/50 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-2 relative z-10 font-heading">
                   100%
@@ -68,7 +68,7 @@ export function Features() {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="flex gap-6 p-6 rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(255,0,122,0.1)] hover:-translate-y-1"
+                className="perf-card flex gap-6 p-6 rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(255,0,122,0.1)] hover:-translate-y-1"
               >
                 <div className="shrink-0 w-16 h-16 rounded-2xl bg-background/50 border border-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:border-primary/30 shadow-inner">
                   {feature.icon}

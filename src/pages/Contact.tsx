@@ -32,7 +32,7 @@ export function Contact() {
         <aside className="lg:col-span-4 space-y-8">
           
           {/* Info Card 1 */}
-          <div className="bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
+          <div className="perf-panel bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
             <div className="w-12 h-12 primary-gradient rounded-xl flex items-center justify-center mb-6 shadow-[0_8px_20px_rgba(125,60,255,0.3)]">
               <span className="material-symbols-outlined text-on-primary text-xl">mail</span>
             </div>
@@ -42,7 +42,7 @@ export function Contact() {
           </div>
 
           {/* Info Card 2 */}
-          <div className="bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
+          <div className="perf-panel bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
             <div className="w-12 h-12 primary-gradient rounded-xl flex items-center justify-center mb-6 shadow-[0_8px_20px_rgba(125,60,255,0.3)]">
               <span className="material-symbols-outlined text-on-primary text-xl">chat_bubble</span>
             </div>
@@ -64,7 +64,7 @@ export function Contact() {
 
         {/* Contact Form Container (8/12) */}
         <div className="lg:col-span-8">
-          <div className="bg-surface-container p-8 md:p-12 rounded-[3rem] relative overflow-hidden h-full">
+          <div className="perf-panel bg-surface-container p-8 md:p-12 rounded-[3rem] relative overflow-hidden h-full">
             
             {/* Royal Scrim decorative element */}
             <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary/5 rounded-full blur-[80px]"></div>
@@ -141,7 +141,7 @@ export function Contact() {
 
       {/* Location Section (Asymmetric Detail) */}
       <section className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="order-2 md:order-1 h-96 rounded-[3rem] overflow-hidden bg-surface-container-low shadow-xl">
+        <div className="perf-panel order-2 md:order-1 h-96 rounded-[3rem] overflow-hidden bg-surface-container-low shadow-xl">
           <div className="w-full h-full bg-surface-container-high flex items-center justify-center relative group">
             <img 
               alt="Map"
@@ -149,7 +149,7 @@ export function Contact() {
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUfNQURvgTvvVEp0-MrgzZhc1EhgaG6M0GXAAqfhzbpv8r4LdJUtupCCh5HzBOC1sfBr5e4Gn1iITvkFDcttsflR-zhvofyboJ3RbO0fYpIwF0j4XSNLOQwBAbCs2-lFy3l9yYs1rWrCV9AsuH5Dxj8t8rI9rTUbWafKXjvGlMxrkWXhaR-3m1k21OXkDxblgcRhBdTy4O97LKUY2BeGnYJvFw7HPuzVz69MPRrMnPPHEWuHemwplBlL_1OMEdosdLzDTtsJMoc1vw" 
             />
             <div className="absolute inset-0 primary-gradient opacity-10"></div>
-            <div className="absolute bg-surface-container p-4 rounded-2xl shadow-2xl flex items-center gap-4">
+            <div className="perf-card absolute bg-surface-container p-4 rounded-2xl shadow-2xl flex items-center gap-4">
               <div className="w-10 h-10 primary-gradient rounded-full flex items-center justify-center">
                 <span className="material-symbols-outlined text-white text-sm">location_on</span>
               </div>

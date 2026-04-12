@@ -27,7 +27,7 @@ export function ProductDetails() {
         العودة للمتجر
       </Link>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-card/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 md:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden">
+      <div className="perf-panel grid grid-cols-1 lg:grid-cols-2 gap-12 bg-card/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 md:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
@@ -68,21 +68,21 @@ export function ProductDetails() {
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-white/5 backdrop-blur-sm">
+            <div className="perf-card flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-white/5 backdrop-blur-sm">
               <Zap className="h-6 w-6 text-primary drop-shadow-[0_0_8px_rgba(255,0,122,0.5)]" />
               <div>
                 <strong className="block text-sm font-heading">بدء سريع</strong>
                 <span className="text-xs text-muted-foreground font-sans">تنفيذ فوري للطلب</span>
               </div>
             </div>
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-white/5 backdrop-blur-sm">
+            <div className="perf-card flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-white/5 backdrop-blur-sm">
               <ShieldCheck className="h-6 w-6 text-secondary drop-shadow-[0_0_8px_rgba(0,212,255,0.5)]" />
               <div>
                 <strong className="block text-sm font-heading">دفع آمن</strong>
                 <span className="text-xs text-muted-foreground font-sans">بوابات موثوقة</span>
               </div>
             </div>
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-white/5 backdrop-blur-sm">
+            <div className="perf-card flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-white/5 backdrop-blur-sm">
               <HeadphonesIcon className="h-6 w-6 text-success drop-shadow-[0_0_8px_rgba(0,230,118,0.5)]" />
               <div>
                 <strong className="block text-sm font-heading">دعم 24/7</strong>
@@ -91,7 +91,7 @@ export function ProductDetails() {
             </div>
           </div>
 
-          <div className="mt-auto bg-background/40 p-6 rounded-2xl border border-white/5 backdrop-blur-md">
+          <div className="perf-card mt-auto bg-background/40 p-6 rounded-2xl border border-white/5 backdrop-blur-md">
             <div className="flex justify-between items-end mb-6">
               <div>
                 <span className="block text-sm text-muted-foreground font-bold mb-1 font-sans">السعر الإجمالي</span>

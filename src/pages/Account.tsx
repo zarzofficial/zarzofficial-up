@@ -128,7 +128,7 @@ export function Account() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+          <div className="perf-panel bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/50">
                 <User className="h-10 w-10 text-primary" />
@@ -145,7 +145,7 @@ export function Account() {
             </div>
           </div>
 
-          <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex flex-col max-h-[500px]">
+          <div className="perf-panel bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex flex-col max-h-[500px]">
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
               <h2 className="text-2xl font-black font-heading">الطلبات <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">الأخيرة</span></h2>
               <button disabled={loadingOrders} onClick={fetchOrders}>
@@ -174,7 +174,7 @@ export function Account() {
                          className="absolute left-0 top-0 w-full pb-4"
                          style={{ transform: `translateY(${virtualOrder.start}px)` }}
                        >
-                         <div className="bg-background/40 border border-white/5 p-4 rounded-xl flex justify-between items-center hover:border-primary/30 transition-all">
+                         <div className="perf-card bg-background/40 border border-white/5 p-4 rounded-xl flex justify-between items-center hover:border-primary/30 transition-all">
                            <div>
                              <p className="font-bold text-sm">طلب #{order.orderNumber || order.id.slice(0,6)}</p>
                              <p className="text-xs text-muted-foreground">{new Date(order.date?.toDate?.() || order.date).toLocaleDateString('ar-EG')}</p>
@@ -202,7 +202,7 @@ export function Account() {
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+        <div className="perf-panel bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-black mb-2 font-heading">{isLogin ? 'تسجيل الدخول' : 'إنشاء حساب'}</h2>
             <p className="text-muted-foreground font-sans">أدخل بياناتك للمتابعة</p>
@@ -270,7 +270,7 @@ export function Account() {
           </form>
         </div>
 
-        <div className="bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex flex-col justify-center items-center text-center">
+        <div className="perf-panel bg-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex flex-col justify-center items-center text-center">
             <Package className="h-16 w-16 text-muted-foreground mb-4 opacity-50" />
             <h2 className="text-xl font-bold mb-2">تتبع طلباتك</h2>
             <p className="text-muted-foreground">قم بتسجيل الدخول لمعرفة حالة طلباتك ورؤية المشتريات السابقة.</p>

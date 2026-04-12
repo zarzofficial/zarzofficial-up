@@ -20,7 +20,7 @@ export function Terms() {
         
         {/* Sticky Summary Sidebar */}
         <aside className="md:col-span-4 space-y-6 order-2 md:order-1">
-          <div className="sticky top-32 p-8 bg-surface-container-low rounded-3xl border border-outline-variant/15">
+          <div className="perf-panel sticky top-32 p-8 bg-surface-container-low rounded-3xl border border-outline-variant/15">
             <h3 className="text-tertiary font-bold text-xl mb-6">فهرس المحتويات</h3>
             <nav className="flex flex-col gap-4 text-sm font-medium">
               <a href="#intro" className="text-on-surface hover:text-primary transition-colors flex items-center gap-3">
@@ -40,7 +40,7 @@ export function Terms() {
                 حدود المسؤولية
               </a>
             </nav>
-            <div className="mt-12 p-6 bg-surface-container rounded-2xl border border-primary/10">
+            <div className="perf-card mt-12 p-6 bg-surface-container rounded-2xl border border-primary/10">
               <span className="material-symbols-outlined text-primary mb-4 text-xl">verified_user</span>
               <p className="text-xs text-on-surface-variant leading-relaxed">
                 آخر تحديث: ٢٤ أكتوبر ٢٠٢٤. تحتفظ زارز بالحق في تعديل هذه الشروط في أي وقت.
@@ -69,7 +69,7 @@ export function Terms() {
           </section>
 
           {/* Section: Terms of Use */}
-          <section id="usage" className="p-10 bg-surface-container-low rounded-[2.5rem] border border-outline-variant/10 shadow-2xl shadow-primary/5">
+          <section id="usage" className="perf-panel p-10 bg-surface-container-low rounded-[2.5rem] border border-outline-variant/10 shadow-2xl shadow-primary/5">
             <div className="flex items-center gap-4 mb-8">
               <span className="w-12 h-[1px] bg-secondary"></span>
               <h2 className="font-headline text-3xl font-bold text-on-background">شروط الاستخدام</h2>
@@ -116,11 +116,11 @@ export function Terms() {
               <h2 className="font-headline text-3xl font-bold text-on-background">حماية البيانات</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-8 bg-surface-container rounded-3xl border border-outline-variant/15 hover:border-primary/30 transition-colors">
+              <div className="perf-card p-8 bg-surface-container rounded-3xl border border-outline-variant/15 hover:border-primary/30 transition-colors">
                 <h4 className="text-on-background font-bold mb-4">التشفير التام</h4>
                 <p className="text-on-surface-variant text-sm leading-loose">نستخدم بروتوكولات تشفير متقدمة لحماية معلوماتك المالية والبيانات الشخصية أثناء عمليات الانتقال والتخزين.</p>
               </div>
-              <div className="p-8 bg-surface-container rounded-3xl border border-outline-variant/15 hover:border-primary/30 transition-colors">
+              <div className="perf-card p-8 bg-surface-container rounded-3xl border border-outline-variant/15 hover:border-primary/30 transition-colors">
                 <h4 className="text-on-background font-bold mb-4">حقوق الخصوصية</h4>
                 <p className="text-on-surface-variant text-sm leading-loose">لك الحق الكامل في الوصول إلى بياناتك، تعديلها، أو طلب مسحها من أنظمتنا وفقاً للوائح المنظمة.</p>
               </div>
@@ -128,7 +128,7 @@ export function Terms() {
           </section>
 
           {/* Section: Limitation of Liability */}
-          <section id="liability" className="relative overflow-hidden p-10 bg-gradient-to-br from-surface-container-low to-surface rounded-[2.5rem] border border-outline-variant/10">
+          <section id="liability" className="perf-panel relative overflow-hidden p-10 bg-gradient-to-br from-surface-container-low to-surface rounded-[2.5rem] border border-outline-variant/10">
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 blur-[80px] rounded-full"></div>
             <div className="flex items-center gap-4 mb-8 relative z-10">
               <span className="w-12 h-[1px] bg-error"></span>

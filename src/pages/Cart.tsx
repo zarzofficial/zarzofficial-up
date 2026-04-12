@@ -94,7 +94,7 @@ export function Cart() {
         <div className="lg:col-span-8 space-y-8">
           
           {/* Section 1: Cart Items */}
-          <div className="bg-surface-container-low rounded-[1.5rem] sm:rounded-3xl p-5 sm:p-8 border border-outline-variant/5">
+          <div className="perf-panel bg-surface-container-low rounded-[1.5rem] sm:rounded-3xl p-5 sm:p-8 border border-outline-variant/5">
             <h2 className="text-xl sm:text-2xl font-bold font-headline mb-6 sm:mb-8 text-on-surface">مراجعة السلة</h2>
             
             {items.length === 0 ? (
@@ -144,7 +144,7 @@ export function Cart() {
           </div>
 
           {/* Section 2: Customer Details */}
-          <div className="bg-surface-container-low rounded-3xl p-8 border border-outline-variant/5">
+          <div className="perf-panel bg-surface-container-low rounded-3xl p-8 border border-outline-variant/5">
             <h2 className="text-2xl font-bold font-headline mb-8 text-on-surface">تفاصيل العميل</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -185,7 +185,7 @@ export function Cart() {
           </div>
 
           {/* Section 3: Payment Methods */}
-          <div className="bg-surface-container-low rounded-3xl p-8 border border-outline-variant/5">
+          <div className="perf-panel bg-surface-container-low rounded-3xl p-8 border border-outline-variant/5">
             <h2 className="text-2xl font-bold font-headline mb-8 text-on-surface">طريقة الدفع</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <label className="relative cursor-pointer group" onClick={() => setPaymentMethod('bankak')}>
@@ -252,7 +252,7 @@ export function Cart() {
         <div className="lg:col-span-4">
           {/* Mobile Indicator for Order Summary */}
           <div className="flex justify-center -mt-2 mb-8 lg:hidden relative z-10 w-full animate-bounce">
-            <div className="bg-primary/10 border border-primary/30 backdrop-blur-md rounded-full px-5 py-2.5 shadow-[0_10px_20px_rgba(208,188,255,0.15)] flex items-center gap-3 text-primary">
+            <div className="perf-card bg-primary/10 border border-primary/30 backdrop-blur-md rounded-full px-5 py-2.5 shadow-[0_10px_20px_rgba(208,188,255,0.15)] flex items-center gap-3 text-primary">
               <span className="material-symbols-outlined text-lg">check_circle</span>
               <span className="text-sm font-bold tracking-wide">الخطوة الأخيرة: ملخص الطلب</span>
               <span className="material-symbols-outlined text-lg">keyboard_double_arrow_down</span>
@@ -260,7 +260,7 @@ export function Cart() {
           </div>
 
           <div className="sticky top-32 space-y-6">
-            <div className="bg-surface-container-high rounded-3xl p-8 border border-outline-variant/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <div className="perf-panel bg-surface-container-high rounded-3xl p-8 border border-outline-variant/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
               <h3 className="text-xl font-bold font-headline mb-6 text-on-surface">ملخص الطلب</h3>
               <div className="space-y-4">
                 <div className="flex justify-between text-outline">
@@ -309,7 +309,7 @@ export function Cart() {
             </div>
 
             {/* Decorative Branding Element */}
-            <div className="bg-primary/5 rounded-3xl p-6 border border-primary/10 flex items-center gap-4">
+            <div className="perf-card bg-primary/5 rounded-3xl p-6 border border-primary/10 flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary">
                 <span className="material-symbols-outlined">workspace_premium</span>
               </div>
@@ -325,7 +325,7 @@ export function Cart() {
       {/* Guest or Login Prompt Modal */}
       {showGuestPrompt && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-sm animate-in fade-in zoom-in duration-300 px-4">
-          <div className="bg-surface-container rounded-[40px] p-8 md:p-12 max-w-lg w-full text-center border border-outline-variant/10 shadow-[0_32px_80px_rgba(86,0,202,0.4)] relative">
+          <div className="perf-modal-card bg-surface-container rounded-[40px] p-8 md:p-12 max-w-lg w-full text-center border border-outline-variant/10 shadow-[0_32px_80px_rgba(86,0,202,0.4)] relative">
             <button onClick={() => setShowGuestPrompt(false)} className="absolute top-6 left-6 text-outline hover:text-white transition-colors">
               <span className="material-symbols-outlined">close</span>
             </button>
@@ -354,7 +354,7 @@ export function Cart() {
       {/* Success Modal */}
       {success && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-sm animate-in fade-in zoom-in duration-300">
-          <div className="bg-surface-container rounded-[40px] p-12 max-w-md w-full text-center border border-primary/20 shadow-[0_32px_80px_rgba(86,0,202,0.4)]">
+          <div className="perf-modal-card bg-surface-container rounded-[40px] p-12 max-w-md w-full text-center border border-primary/20 shadow-[0_32px_80px_rgba(86,0,202,0.4)]">
             <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
               <span className="material-symbols-outlined text-5xl text-primary">check_circle</span>
             </div>

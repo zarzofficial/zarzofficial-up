@@ -158,7 +158,7 @@ function StoreProductCard({
 } & Attributes) {
   return (
     <div
-      className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-outline-variant/10 bg-surface-container-low ${
+      className={`perf-card group flex h-full flex-col overflow-hidden rounded-2xl border border-outline-variant/10 bg-surface-container-low ${
         metrics.reduceEffects
           ? "shadow-sm"
           : "shadow-md transition-transform duration-300 md:hover:-translate-y-1 md:hover:shadow-[0_18px_38px_rgba(86,0,202,0.14)]"

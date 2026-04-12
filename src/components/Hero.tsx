@@ -85,7 +85,7 @@ export function Hero() {
             <motion.div 
                whileHover={{ y: -10 }}
                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-               className="relative bg-card/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 shadow-2xl overflow-hidden"
+               className="perf-panel relative bg-card/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 shadow-2xl overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
@@ -94,13 +94,13 @@ export function Hero() {
                 <div className="space-y-4">
                   <motion.div 
                      whileHover={{ scale: 1.05 }}
-                     className="h-32 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 border border-white/10 flex items-center justify-center shadow-inner"
+                     className="perf-card h-32 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 border border-white/10 flex items-center justify-center shadow-inner"
                   >
                     <ShoppingBag className="h-10 w-10 text-secondary" />
                   </motion.div>
                   <motion.div 
                      whileHover={{ scale: 1.05 }}
-                     className="h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-white/10 flex items-center justify-center shadow-inner"
+                     className="perf-card h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-white/10 flex items-center justify-center shadow-inner"
                   >
                     <Zap className="h-10 w-10 text-primary drop-shadow-[0_0_10px_rgba(255,0,122,0.5)]" />
                   </motion.div>
@@ -108,13 +108,13 @@ export function Hero() {
                 <div className="space-y-4 mt-8">
                   <motion.div 
                      whileHover={{ scale: 1.05 }}
-                     className="h-48 rounded-2xl bg-gradient-to-br from-success/20 to-success/5 border border-white/10 flex items-center justify-center shadow-inner"
+                     className="perf-card h-48 rounded-2xl bg-gradient-to-br from-success/20 to-success/5 border border-white/10 flex items-center justify-center shadow-inner"
                   >
                     <ArrowLeft className="h-10 w-10 text-success" />
                   </motion.div>
                   <motion.div 
                      whileHover={{ scale: 1.05 }}
-                     className="h-32 rounded-2xl bg-gradient-to-br from-primary/30 to-secondary/30 border border-white/10 flex items-center justify-center shadow-inner backdrop-blur-md"
+                     className="perf-card h-32 rounded-2xl bg-gradient-to-br from-primary/30 to-secondary/30 border border-white/10 flex items-center justify-center shadow-inner backdrop-blur-md"
                   >
                     <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-heading tracking-widest">
                       ZARZ

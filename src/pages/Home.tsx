@@ -5,7 +5,7 @@ import { FeaturedProducts } from "../components/FeaturedProducts";
 function FaqItem({ faq, isOpen, onClick }: { key?: React.Key, faq: { question: string, answer: string }, isOpen: boolean, onClick: () => void }) {
   return (
     <div
-      className={`cyber-glass-card rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border ${isOpen ? 'border-[#e11d48]/30 bg-[#e11d48]/5' : 'border-outline-variant/10 hover:border-outline-variant/30 bg-surface-container-low/30'}`}
+      className={`perf-card cyber-glass-card rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border ${isOpen ? 'border-[#e11d48]/30 bg-[#e11d48]/5' : 'border-outline-variant/10 hover:border-outline-variant/30 bg-surface-container-low/30'}`}
       onClick={onClick}
     >
       <div className="p-6 flex items-center justify-between">
@@ -83,7 +83,7 @@ export function Home() {
           </div>
 
           {/* Features Vertical Card */}
-          <div className="w-full lg:w-[340px] xl:w-[380px] shrink-0 cyber-glass-card rounded-[2rem] p-6 xl:p-8 border border-white/5 bg-surface/60 backdrop-blur-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] relative hidden lg:block">
+          <div className="perf-panel w-full lg:w-[340px] xl:w-[380px] shrink-0 cyber-glass-card rounded-[2rem] p-6 xl:p-8 border border-white/5 bg-surface/60 backdrop-blur-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] relative hidden lg:block">
             <div className="absolute -top-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-[40px] pointer-events-none"></div>
 
             <div className="flex justify-start mb-6">
@@ -102,7 +102,7 @@ export function Home() {
 
             <div className="space-y-4">
               {/* Feature 1 */}
-              <div className="p-4 rounded-[1.25rem] bg-white/5 border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+              <div className="perf-card p-4 rounded-[1.25rem] bg-white/5 border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-[#e11d48] shrink-0 flex items-center justify-center text-white text-2xl font-black shadow-[0_0_15px_rgba(225,29,72,0.4)]">
                   #
                 </div>
@@ -113,7 +113,7 @@ export function Home() {
               </div>
 
               {/* Feature 2 */}
-              <div className="p-4 rounded-[1.25rem] bg-white/5 border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+              <div className="perf-card p-4 rounded-[1.25rem] bg-white/5 border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-[#3b82f6] shrink-0 flex items-center justify-center text-white shadow-[0_0_15px_rgba(59,130,246,0.4)]">
                   <span className="material-symbols-outlined text-2xl fill-1">bolt</span>
                 </div>
@@ -124,7 +124,7 @@ export function Home() {
               </div>
 
               {/* Feature 3 */}
-              <div className="p-4 rounded-[1.25rem] bg-white/5 border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+              <div className="perf-card p-4 rounded-[1.25rem] bg-white/5 border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-[#10b981] shrink-0 flex items-center justify-center text-white shadow-[0_0_15px_rgba(16,185,129,0.4)]">
                   <span className="material-symbols-outlined text-2xl">laptop_mac</span>
                 </div>
@@ -157,17 +157,20 @@ export function Home() {
             <div className="hidden md:block h-[1px] flex-grow bg-outline-variant/30 mx-12 mb-4"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-8">
             {/* AI Service - Large Card */}
-            <div className="md:col-span-8 cyber-glass-card rounded-[2.5rem] p-8 md:p-12 group flex flex-col justify-between">
-              <div className="mesh-gradient-bg"></div>
-              <div className="glowing-border-accent"></div>
+            <div
+              className="perf-panel main-service-card main-service-card--wide md:col-span-8 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col justify-between overflow-hidden"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
               <div className="relative z-20">
-                <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform icon-glow-container" style={{ transform: "translateZ(0)" }}>
-                  <span className="material-symbols-outlined text-5xl icon-gradient drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="neurology">neurology</span>
+                <div className="main-service-card__icon-shell icon-glow-container mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:scale-110 md:transition-transform">
+                  <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="neurology">neurology</span>
                 </div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="bg-primary/20 text-[#f5d9fe] border border-primary/30 px-4 py-1 rounded-full text-xs font-bold backdrop-blur-md">حصري</span>
+                  <span className="rounded-full border border-primary/30 bg-primary/20 px-4 py-1 text-xs font-bold text-[#f5d9fe] sm:backdrop-blur-md">حصري</span>
                   <span className="text-primary/50 text-[10px] uppercase tracking-widest font-bold">Neural Core v2.0</span>
                 </div>
                 <h3 className="text-3xl md:text-5xl font-black mb-6 text-on-background tracking-tight text-glow">الذكاء الاصطناعي</h3>
@@ -176,64 +179,73 @@ export function Home() {
                 </p>
               </div>
               <div className="relative z-20 mt-auto">
-                <Link to="/products?category=ai" className="inline-flex items-center gap-3 text-primary font-black hover:gap-6 transition-all duration-500 text-xl group/link">
+                <Link to="/products?category=ai" className="main-service-card__link group/link inline-flex items-center gap-3 text-xl font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
                   <span>تفاصيل الخدمة</span>
-                  <span className="material-symbols-outlined transition-transform group-hover/link:-translate-x-2">arrow_back</span>
+                  <span className="material-symbols-outlined transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
                 </Link>
               </div>
             </div>
 
             {/* Social Media - Small Vertical */}
-            <div className="md:col-span-4 cyber-glass-card rounded-[2.5rem] p-8 md:p-12 group flex flex-col justify-center items-center text-center">
-              <div className="mesh-gradient-bg"></div>
-              <div className="glowing-border-accent"></div>
+            <div
+              className="perf-panel main-service-card main-service-card--tall md:col-span-4 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col items-center justify-center overflow-hidden text-center"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
               <div className="relative z-20">
-                <div className="w-24 h-24 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center mx-auto mb-10 group-hover:rotate-12 transition-transform icon-glow-container" style={{ transform: "translateZ(0)" }}>
-                  <span className="material-symbols-outlined text-5xl icon-gradient drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="campaign">campaign</span>
+                <div className="main-service-card__icon-shell icon-glow-container mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:rotate-12 md:transition-transform">
+                  <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="campaign">campaign</span>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-black mb-6 text-on-background tracking-tight">إدارة المنصات</h3>
                 <p className="text-[#cbc3d9] text-lg leading-relaxed mb-8">
                   نصنع محتوى يتفاعل معه العالم بأسلوب احترافي وجذاب يضمن وصول رسالتك للجمهور المستهدف.
                 </p>
                 <div className="mt-auto">
-                  <Link to="/products?category=social" className="inline-flex items-center gap-3 text-primary font-black hover:gap-6 transition-all duration-500 group/link">
+                  <Link to="/products?category=social" className="main-service-card__link group/link inline-flex items-center gap-3 font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
                     <span>تصفح الباقات</span>
-                    <span className="material-symbols-outlined transition-transform group-hover/link:-translate-x-2 text-sm">arrow_back</span>
+                    <span className="material-symbols-outlined text-sm transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Gaming - Small Vertical */}
-            <div className="md:col-span-4 cyber-glass-card rounded-[2.5rem] p-8 md:p-12 group flex flex-col justify-center items-center text-center">
-              <div className="mesh-gradient-bg"></div>
-              <div className="glowing-border-accent"></div>
+            <div
+              className="perf-panel main-service-card main-service-card--tall md:col-span-4 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col items-center justify-center overflow-hidden text-center"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
               <div className="relative z-20">
-                <div className="w-24 h-24 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center mx-auto mb-10 group-hover:scale-110 transition-transform icon-glow-container" style={{ transform: "translateZ(0)" }}>
-                  <span className="material-symbols-outlined text-5xl icon-gradient drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="sports_esports">sports_esports</span>
+                <div className="main-service-card__icon-shell icon-glow-container mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:scale-110 md:transition-transform">
+                  <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="sports_esports">sports_esports</span>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-black mb-6 text-on-background tracking-tight">خدمات الألعاب</h3>
                 <p className="text-[#cbc3d9] text-lg leading-relaxed mb-8">
                   شحن، اشتراكات، وأدوات احترافية لأفضل تجربة لعب. كل ما يحتاجه المحترفون في مكان واحد.
                 </p>
                 <div className="mt-auto">
-                  <Link to="/products?category=gaming" className="inline-flex items-center gap-3 text-primary font-black hover:gap-6 transition-all duration-500 group/link">
+                  <Link to="/products?category=gaming" className="main-service-card__link group/link inline-flex items-center gap-3 font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
                     <span>تصفح العروض</span>
-                    <span className="material-symbols-outlined transition-transform group-hover/link:-translate-x-2 text-sm">arrow_back</span>
+                    <span className="material-symbols-outlined text-sm transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Web Services - Medium Landscape */}
-            <div className="md:col-span-8 cyber-glass-card rounded-[2.5rem] p-8 md:p-12 group flex flex-col justify-between overflow-hidden">
-              <div className="mesh-gradient-bg"></div>
-              <div className="glowing-border-accent"></div>
+            <div
+              className="perf-panel main-service-card main-service-card--wide md:col-span-8 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col justify-between overflow-hidden"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
               <div className="relative z-20">
                 <div className="flex items-start justify-between gap-8">
                   <div className="flex-1">
-                    <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center mb-8 group-hover:translate-x-4 transition-transform icon-glow-container" style={{ transform: "translateZ(0)" }}>
-                      <span className="material-symbols-outlined text-5xl icon-gradient drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="terminal">terminal</span>
+                    <div className="main-service-card__icon-shell icon-glow-container mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:translate-x-4 md:transition-transform">
+                      <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="terminal">terminal</span>
                     </div>
                     <h3 className="text-3xl md:text-5xl font-black mb-6 text-on-background tracking-tight">خدمات الويب</h3>
                     <p className="text-[#cbc3d9] text-xl leading-relaxed mb-8 max-w-xl">
@@ -246,9 +258,9 @@ export function Home() {
                 </div>
               </div>
               <div className="relative z-20">
-                <Link to="/products?category=web" className="inline-flex items-center gap-3 text-primary font-black hover:gap-6 transition-all duration-500 text-xl group/link">
+                <Link to="/products?category=web" className="main-service-card__link group/link inline-flex items-center gap-3 text-xl font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
                   <span>اكتشف المزيد</span>
-                  <span className="material-symbols-outlined transition-transform group-hover/link:-translate-x-2">arrow_back</span>
+                  <span className="material-symbols-outlined transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
                 </Link>
               </div>
             </div>
@@ -270,7 +282,7 @@ export function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 
             {/* Card 1 */}
-            <div className="group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(208,188,255,0.08)] overflow-hidden">
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(208,188,255,0.08)] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">01</div>
               <div className="relative z-10">
@@ -283,7 +295,7 @@ export function Home() {
             </div>
 
             {/* Card 2 */}
-            <div className="group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#3b82f6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(59,130,246,0.08)] overflow-hidden">
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#3b82f6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(59,130,246,0.08)] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">02</div>
               <div className="relative z-10">
@@ -296,7 +308,7 @@ export function Home() {
             </div>
 
             {/* Card 3 */}
-            <div className="group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#10b981]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(16,185,129,0.08)] overflow-hidden">
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#10b981]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(16,185,129,0.08)] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#10b981]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">03</div>
               <div className="relative z-10">
@@ -309,7 +321,7 @@ export function Home() {
             </div>
 
             {/* Card 4 */}
-            <div className="group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#f59e0b]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(245,158,11,0.08)] overflow-hidden">
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#f59e0b]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(245,158,11,0.08)] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">04</div>
               <div className="relative z-10">
@@ -322,7 +334,7 @@ export function Home() {
             </div>
 
             {/* Card 5 */}
-            <div className="group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#e11d48]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(225,29,72,0.08)] overflow-hidden">
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#e11d48]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(225,29,72,0.08)] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#e11d48]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">05</div>
               <div className="relative z-10">
@@ -335,7 +347,7 @@ export function Home() {
             </div>
 
             {/* Card 6 */}
-            <div className="group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#8b5cf6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(139,92,246,0.08)] overflow-hidden">
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#8b5cf6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(139,92,246,0.08)] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">06</div>
               <div className="relative z-10">
@@ -359,7 +371,7 @@ export function Home() {
         </div>
         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center">
 
-          <div className="group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(86,0,202,0.15)] overflow-hidden flex flex-col justify-center">
+          <div className="perf-card group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(86,0,202,0.15)] overflow-hidden flex flex-col justify-center">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-500"></div>
             <div className="relative z-10 flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
@@ -370,7 +382,7 @@ export function Home() {
             </div>
           </div>
 
-          <div className="group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-[#3b82f6]/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(59,130,246,0.15)] overflow-hidden flex flex-col justify-center">
+          <div className="perf-card group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-[#3b82f6]/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(59,130,246,0.15)] overflow-hidden flex flex-col justify-center">
             <div className="absolute top-0 left-0 w-32 h-32 bg-[#3b82f6]/10 rounded-full blur-3xl group-hover:bg-[#3b82f6]/20 transition-all duration-500"></div>
             <div className="relative z-10 flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#3b82f6]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
@@ -381,7 +393,7 @@ export function Home() {
             </div>
           </div>
 
-          <div className="group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-[#f59e0b]/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(245,158,11,0.15)] overflow-hidden flex flex-col justify-center">
+          <div className="perf-card group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-[#f59e0b]/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(245,158,11,0.15)] overflow-hidden flex flex-col justify-center">
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#f59e0b]/10 rounded-full blur-3xl group-hover:bg-[#f59e0b]/20 transition-all duration-500"></div>
             <div className="relative z-10 flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#f59e0b]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
@@ -392,7 +404,7 @@ export function Home() {
             </div>
           </div>
 
-          <div className="group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-[#10b981]/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(16,185,129,0.15)] overflow-hidden flex flex-col justify-center">
+          <div className="perf-card group relative p-8 md:p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-[#10b981]/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(16,185,129,0.15)] overflow-hidden flex flex-col justify-center">
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#10b981]/10 rounded-full blur-3xl group-hover:bg-[#10b981]/20 transition-all duration-500"></div>
             <div className="relative z-10 flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
@@ -440,7 +452,7 @@ export function Home() {
 
       {/* CTA Section */}
       <section className="py-24 md:py-32 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto cyber-glass-card rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden group border border-outline-variant/20 shadow-2xl">
+        <div className="perf-panel max-w-7xl mx-auto cyber-glass-card rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden group border border-outline-variant/20 shadow-2xl">
           <div className="mesh-gradient-bg opacity-30"></div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
