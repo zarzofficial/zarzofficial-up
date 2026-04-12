@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#412e4a",
+                    "inverse-surface": "#f5d9fe",
+                    "on-primary": "#3b0091",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed": "#eddcff",
+                    "secondary": "#d2bfe8",
+                    "inverse-on-surface": "#3c2945",
+                    "on-tertiary-container": "#f5e9ff",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed-variant": "#5600ca",
+                    "surface-container-lowest": "#180721",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#eddcff",
+                    "secondary-fixed-dim": "#d2bfe8",
+                    "surface-container-highest": "#412e4a",
+                    "on-primary-container": "#f3eaff",
+                    "outline": "#958da2",
+                    "surface": "#1d0c26",
+                    "primary-container": "#7d3cff",
+                    "background": "#1d0c26",
+                    "surface-container": "#2a1833",
+                    "on-secondary": "#382a4a",
+                    "on-tertiary-fixed-variant": "#593090",
+                    "surface-bright": "#45324e",
+                    "on-secondary-container": "#c0aed6",
+                    "inverse-primary": "#6f27f1",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#4f4062",
+                    "tertiary": "#d7baff",
+                    "surface-tint": "#d0bcff",
+                    "on-primary-fixed": "#23005c",
+                    "on-tertiary-fixed": "#290055",
+                    "on-surface": "#f5d9fe",
+                    "outline-variant": "#4a4456",
+                    "surface-container-high": "#35233e",
+                    "on-background": "#f5d9fe",
+                    "secondary-container": "#4f4062",
+                    "primary-fixed-dim": "#d0bcff",
+                    "on-secondary-fixed": "#221534",
+                    "tertiary-container": "#7f57b8",
+                    "surface-container-low": "#26142f",
+                    "on-surface-variant": "#cbc3d9",
+                    "primary-fixed": "#e9ddff",
+                    "surface-dim": "#1d0c26",
+                    "primary": "#d0bcff",
+                    "tertiary-fixed-dim": "#d7baff",
+                    "on-tertiary": "#411478"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Be Vietnam Pro"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .royal-gradient {
+            background: linear-gradient(135deg, #d0bcff 0%, #7d3cff 100%);
+        }
+        .glass-nav {
+            background: rgba(29, 12, 38, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        body {
+            background-color: #1d0c26;
+            color: #f5d9fe;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#1d0c26]/60 backdrop-blur-[20px] shadow-[0_8px_40px_rgba(86,0,202,0.15)]">
+<nav class="flex flex-row justify-between items-center px-12 py-5 w-full max-w-screen-2xl mx-auto font-['Be_Vietnam_Pro'] text-right antialiased">
+<div class="text-3xl font-black text-[#d0bcff] tracking-tight">زارز</div>
+<div class="hidden md:flex flex-row items-center gap-8">
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-lg" href="#">الرئيسية</a>
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-lg" href="#">الخدمات</a>
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-lg" href="#">سلة المشتريات</a>
+<a class="text-[#d0bcff] font-bold border-b-2 border-[#d0bcff] pb-1 hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-lg" href="#">اتصل بنا</a>
+</div>
+<div class="flex items-center gap-6 text-[#d0bcff]">
+<button class="scale-98 active:opacity-80 transition-transform"><span class="material-symbols-outlined">shopping_cart</span></button>
+<button class="scale-98 active:opacity-80 transition-transform"><span class="material-symbols-outlined">person</span></button>
+<button class="md:hidden"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</nav>
+</header>
+<main class="flex-grow pt-32 pb-20 px-6 max-w-7xl mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-20 text-center md:text-right relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<h1 class="font-headline text-5xl md:text-7xl font-black mb-6 text-on-surface tracking-tight leading-tight">نحن هنا <br/><span class="text-primary italic">لأجلك</span></h1>
+<p class="text-xl text-on-surface-variant max-w-2xl md:mr-0 mr-auto leading-relaxed">
+                سواء كان لديك استفسار أو ترغب في التعاون معنا، فريق زارز جاهز دائماً لتقديم الدعم والخدمة الملكية التي تستحقها.
+            </p>
+</section>
+<!-- Main Content Layout (Asymmetric Bento) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Contact Details Sidebar (3/12) -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Info Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
+<div class="w-12 h-12 royal-gradient rounded-xl flex items-center justify-center mb-6 shadow-[0_8px_20px_rgba(125,60,255,0.3)]">
+<span class="material-symbols-outlined text-on-primary">mail</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2">تواصل معنا عبر البريد</h3>
+<p class="text-on-surface-variant mb-4">راسلنا في أي وقت وسنقوم بالرد خلال ٢٤ ساعة.</p>
+<a class="text-tertiary font-bold text-lg hover:underline underline-offset-4" href="mailto:support@zarz.com">support@zarz.com</a>
+</div>
+<!-- Info Card 2 -->
+<div class="bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
+<div class="w-12 h-12 royal-gradient rounded-xl flex items-center justify-center mb-6 shadow-[0_8px_20px_rgba(125,60,255,0.3)]">
+<span class="material-symbols-outlined text-on-primary">chat_bubble</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2">واتساب مباشر</h3>
+<p class="text-on-surface-variant mb-4">تواصل سريع وفوري مع فريق الدعم الفني.</p>
+<a class="text-tertiary font-bold text-lg hover:underline underline-offset-4" href="https://wa.me/966500000000">+٩٦٦ ٥٠ ٠٠٠ ٠٠٠٠</a>
+</div>
+<!-- Decorative Asset -->
+<div class="hidden lg:block relative h-48 rounded-[2rem] overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700" data-alt="abstract flowing purple and violet digital art with smooth silk-like textures and atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXgF0z5f0-DoCcOlyqmUOdqIl603LMuwWVfAIDlGfHlAMS1R6Bi9hX-0RLiABd98wJLtbJthOc5TD3du1FAaGJIu70RgbUzcbM6aBiuHrDKE72Be-e4Lo1FKxQ5esyAKkWWjRQSFLD0WcQCbhW56yQcWGN4p1oBrg8Di5sStHR67GleZZGnQgnk9KBTLOl5NtnblFMNNRcCXIUbZTIprzUPEOdM5P55Uyrh9YOMNlUJ5sPIxR5PBWrd8HhNlJnKhz6SNAVCLhD2KTd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+</aside>
+<!-- Contact Form Container (8/12) -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container p-8 md:p-12 rounded-[3rem] relative overflow-hidden">
+<!-- Royal Scrim decorative element -->
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary/5 rounded-full blur-[80px]"></div>
+<form action="#" class="space-y-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Input Group -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant mr-2" for="name">الاسم بالكامل</label>
+<input class="w-full bg-surface-container-highest border-none rounded-2xl p-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline" id="name" name="name" placeholder="اكتب اسمك هنا..." type="text"/>
+</div>
+<!-- Input Group -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant mr-2" for="email">البريد الإلكتروني</label>
+<input class="w-full bg-surface-container-highest border-none rounded-2xl p-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline" id="email" name="email" placeholder="example@zarz.com" type="email"/>
+</div>
+</div>
+<!-- Input Group -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant mr-2" for="subject">الموضوع</label>
+<input class="w-full bg-surface-container-highest border-none rounded-2xl p-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline" id="subject" name="subject" placeholder="ما هو موضوع رسالتك؟" type="text"/>
+</div>
+<!-- Textarea Group -->
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant mr-2" for="message">الرسالة</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-[2rem] p-6 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline resize-none" id="message" name="message" placeholder="اكتب تفاصيل استفسارك هنا..." rows="6"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="flex justify-end">
+<button class="royal-gradient text-on-primary font-bold px-12 py-4 rounded-full text-lg shadow-[0_12px_32px_rgba(125,60,255,0.4)] hover:scale-105 hover:shadow-[0_16px_40px_rgba(125,60,255,0.5)] active:scale-95 transition-all duration-300 flex items-center gap-3" type="submit">
+                                إرسال الرسالة
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Location Section (Asymmetric Detail) -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1 h-96 rounded-[3rem] overflow-hidden bg-surface-container-low shadow-xl">
+<div class="w-full h-full bg-surface-container-high flex items-center justify-center relative group">
+<img class="w-full h-full object-cover opacity-50 transition-transform duration-1000 group-hover:scale-110" data-alt="stylized map texture in dark amethyst colors with glowing points of light representing connection nodes" data-location="Riyadh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUfNQURvgTvvVEp0-MrgzZhc1EhgaG6M0GXAAqfhzbpv8r4LdJUtupCCh5HzBOC1sfBr5e4Gn1iITvkFDcttsflR-zhvofyboJ3RbO0fYpIwF0j4XSNLOQwBAbCs2-lFy3l9yYs1rWrCV9AsuH5Dxj8t8rI9rTUbWafKXjvGlMxrkWXhaR-3m1k21OXkDxblgcRhBdTy4O97LKUY2BeGnYJvFw7HPuzVz69MPRrMnPPHEWuHemwplBlL_1OMEdosdLzDTtsJMoc1vw"/>
+<div class="absolute inset-0 royal-gradient opacity-10"></div>
+<div class="absolute bg-surface-container p-4 rounded-2xl shadow-2xl flex items-center gap-4">
+<div class="w-10 h-10 royal-gradient rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<p class="font-bold text-sm">مقر زارز الرئيسي</p>
+<p class="text-xs text-on-surface-variant">الرياض، المملكة العربية السعودية</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-6">
+<h2 class="font-headline text-4xl font-black">تفضل <span class="text-tertiary">بزيارتنا</span></h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    نحن نؤمن بالتواصل المباشر. إذا كنت في المنطقة، تفضل بزيارة مكتبنا الرئيسي لمناقشة أفكارك وتطلعاتك في بيئة ملكية مصممة للإلهام.
+                </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="text-on-surface">من الأحد إلى الخميس: ٩:٠٠ ص - ٦:٠٠ م</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">distance</span>
+<span class="text-on-surface">طريق الملك فهد، برج الفيصلية، الرياض</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-10 mt-auto bg-[#1d0c26] bg-gradient-to-t from-[#26142f] to-[#1d0c26] font-['Manrope'] text-right leading-relaxed rtl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 max-w-7xl mx-auto">
+<div class="col-span-1">
+<span class="text-2xl font-bold text-[#d0bcff] mb-4 block">زارز</span>
+<p class="text-[#958da2] mb-6">تجربة تسوق فريدة تجمع بين الرقي والخدمة المتميزة. نحن هنا لخدمة تطلعاتكم.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-[#d0bcff] hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-[#d0bcff] hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+</div>
+</div>
+<div class="col-span-1 space-y-4">
+<h4 class="text-on-surface font-bold text-lg">روابط سريعة</h4>
+<ul class="space-y-3">
+<li><a class="text-[#958da2] hover:text-white transition-colors" href="#">الرئيسية</a></li>
+<li><a class="text-[#958da2] hover:text-white transition-colors" href="#">عن زارز</a></li>
+<li><a class="text-[#958da2] hover:text-white transition-colors" href="#">آخر العروض</a></li>
+<li><a class="text-[#958da2] hover:text-white transition-colors" href="#">المدونة</a></li>
+</ul>
+</div>
+<div class="col-span-1 space-y-4">
+<h4 class="text-on-surface font-bold text-lg">الدعم والقانونية</h4>
+<ul class="space-y-3">
+<li><a class="text-[#958da2] hover:text-white transition-colors" href="#">الشروط والأحكام</a></li>
+<li><a class="text-[#958da2] hover:text-white transition-colors" href="#">سياسة الخصوصية</a></li>
+<li><a class="text-[#958da2] hover:text-white transition-colors" href="#">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/5 text-center px-12">
+<p class="text-[#958da2] text-sm">© ٢٠٢٤ زارز. جميع الحقوق محفوظة</p>
+</div>
+</footer>
+</body></html>

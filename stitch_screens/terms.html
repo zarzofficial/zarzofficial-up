@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#412e4a",
+                        "inverse-surface": "#f5d9fe",
+                        "on-primary": "#3b0091",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#eddcff",
+                        "secondary": "#d2bfe8",
+                        "inverse-on-surface": "#3c2945",
+                        "on-tertiary-container": "#f5e9ff",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#5600ca",
+                        "surface-container-lowest": "#180721",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#eddcff",
+                        "secondary-fixed-dim": "#d2bfe8",
+                        "surface-container-highest": "#412e4a",
+                        "on-primary-container": "#f3eaff",
+                        "outline": "#958da2",
+                        "surface": "#1d0c26",
+                        "primary-container": "#7d3cff",
+                        "background": "#1d0c26",
+                        "surface-container": "#2a1833",
+                        "on-secondary": "#382a4a",
+                        "on-tertiary-fixed-variant": "#593090",
+                        "surface-bright": "#45324e",
+                        "on-secondary-container": "#c0aed6",
+                        "inverse-primary": "#6f27f1",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#4f4062",
+                        "tertiary": "#d7baff",
+                        "surface-tint": "#d0bcff",
+                        "on-primary-fixed": "#23005c",
+                        "on-tertiary-fixed": "#290055",
+                        "on-surface": "#f5d9fe",
+                        "outline-variant": "#4a4456",
+                        "surface-container-high": "#35233e",
+                        "on-background": "#f5d9fe",
+                        "secondary-container": "#4f4062",
+                        "primary-fixed-dim": "#d0bcff",
+                        "on-secondary-fixed": "#221534",
+                        "tertiary-container": "#7f57b8",
+                        "surface-container-low": "#26142f",
+                        "on-surface-variant": "#cbc3d9",
+                        "primary-fixed": "#e9ddff",
+                        "surface-dim": "#1d0c26",
+                        "primary": "#d0bcff",
+                        "tertiary-fixed-dim": "#d7baff",
+                        "on-tertiary": "#411478"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Be Vietnam Pro"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #1d0c26;
+            color: #f5d9fe;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+        .editorial-text {
+            line-height: 2;
+            letter-spacing: 0.015em;
+        }
+        .royal-gradient-text {
+            background: linear-gradient(135deg, #d0bcff 0%, #7d3cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-nav {
+            background: rgba(29, 12, 38, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .card-glow:hover {
+            box-shadow: 0 8px 40px rgba(86, 0, 202, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_8px_40px_rgba(86,0,202,0.15)]">
+<div class="flex justify-between items-center px-12 py-5 w-full max-w-screen-2xl mx-auto font-['Be_Vietnam_Pro'] text-right antialiased flex-row">
+<div class="text-3xl font-black text-[#d0bcff] tracking-tight">زارز</div>
+<div class="hidden md:flex flex-row items-center gap-10">
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300" href="#">الرئيسية</a>
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300" href="#">الخدمات</a>
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300" href="#">سلة المشتريات</a>
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300" href="#">اتصل بنا</a>
+<a class="text-[#d7baff] underline underline-offset-8 font-bold pb-1" href="#">الشروط والأحكام</a>
+</div>
+<div class="flex flex-row items-center gap-6 text-[#d0bcff]">
+<button class="material-symbols-outlined hover:bg-white/5 p-2 rounded-full transition-all">person</button>
+<button class="material-symbols-outlined hover:bg-white/5 p-2 rounded-full transition-all">shopping_cart</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative pt-40 pb-24 px-6 md:px-12 max-w-5xl mx-auto">
+<!-- Hero Header -->
+<header class="mb-20 text-center md:text-right">
+<div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-surface-container-high border border-outline-variant/15 text-primary text-sm font-bold tracking-widest">
+                الوثيقة الرسمية
+            </div>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-on-background mb-8 leading-tight">
+                الشروط <span class="royal-gradient-text">والأحكام</span>
+</h1>
+<p class="text-outline text-lg md:text-xl max-w-2xl ml-auto">
+                يرجى قراءة هذه الشروط بعناية قبل استخدام منصة زارز. استخدامك للموقع يعني موافقتك الصريحة على كافة البنود الواردة أدناه.
+            </p>
+</header>
+<!-- Content Layout: Asymmetric Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Sticky Summary Sidebar -->
+<aside class="md:col-span-4 space-y-6 order-2 md:order-1">
+<div class="sticky top-32 p-8 bg-surface-container-low rounded-3xl border border-outline-variant/15">
+<h3 class="text-tertiary font-bold text-xl mb-6">فهرس المحتويات</h3>
+<nav class="flex flex-col gap-4 text-sm font-medium">
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-3" href="#intro">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                            مقدمة
+                        </a>
+<a class="text-outline hover:text-primary transition-colors flex items-center gap-3" href="#usage">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
+                            شروط الاستخدام
+                        </a>
+<a class="text-outline hover:text-primary transition-colors flex items-center gap-3" href="#data">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
+                            حماية البيانات
+                        </a>
+<a class="text-outline hover:text-primary transition-colors flex items-center gap-3" href="#liability">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
+                            حدود المسؤولية
+                        </a>
+</nav>
+<div class="mt-12 p-6 bg-surface-container rounded-2xl border border-primary/10">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                            آخر تحديث: ٢٤ أكتوبر ٢٠٢٤. تحتفظ زارز بالحق في تعديل هذه الشروط في أي وقت.
+                        </p>
+</div>
+</div>
+</aside>
+<!-- Main Long-form Text -->
+<article class="md:col-span-8 order-1 md:order-2 space-y-16">
+<!-- Section: Introduction -->
+<section class="group" id="intro">
+<div class="flex items-center gap-4 mb-6">
+<span class="w-12 h-[1px] bg-primary"></span>
+<h2 class="font-headline text-3xl font-bold text-on-background">مقدمة</h2>
+</div>
+<div class="editorial-text text-on-surface-variant space-y-6 text-lg">
+<p>
+                            أهلاً بكم في منصة زارز (ZARZ). تشكل هذه الشروط والأحكام اتفاقية قانونية ملزمة بينك وبين المنصة بخصوص وصولك إلى موقعنا الإلكتروني واستخدامه. 
+                        </p>
+<p>
+                            نحن نسعى لتقديم تجربة تسوق استثنائية تعكس هويتنا السيادية في عالم التجارة الرقمية. من خلال تصفحك لزارز، أنت تقر بأنك قد قرأت وفهمت هذه الشروط بالكامل.
+                        </p>
+</div>
+</section>
+<!-- Section: Terms of Use -->
+<section class="p-10 bg-surface-container-low rounded-[2.5rem] border border-outline-variant/10 shadow-2xl shadow-primary/5" id="usage">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-12 h-[1px] bg-secondary"></span>
+<h2 class="font-headline text-3xl font-bold text-on-background">شروط الاستخدام</h2>
+</div>
+<ul class="space-y-8">
+<li class="flex gap-6">
+<div class="shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined">person_check</span>
+</div>
+<div>
+<h4 class="text-on-background font-bold text-xl mb-2">الأهلية القانونية</h4>
+<p class="text-on-surface-variant leading-relaxed">يجب أن لا يقل عمر المستخدم عن ١٨ عاماً للقيام بعمليات الشراء المباشرة، أو استخدام المنصة تحت إشراف ولي الأمر.</p>
+</div>
+</li>
+<li class="flex gap-6">
+<div class="shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-surface-container-highest text-secondary">
+<span class="material-symbols-outlined">block</span>
+</div>
+<div>
+<h4 class="text-on-background font-bold text-xl mb-2">الاستخدام المحظور</h4>
+<p class="text-on-surface-variant leading-relaxed">يُحظر استخدام الموقع لأي غرض غير قانوني، أو محاولة اختراق الأنظمة الأمنية، أو جمع بيانات المستخدمين الآخرين دون إذن صريح.</p>
+</div>
+</li>
+</ul>
+</section>
+<!-- Image Break: Royal Scrim Aesthetic -->
+<div class="relative h-64 md:h-80 w-full overflow-hidden rounded-[2.5rem] group">
+<img alt="Abstract digital grid with violet light" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="abstract tech background with deep violet lighting and glowing lines representing data protection and digital security" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbuuEa8JhjmV5Fo7GYGVggrO37P4dF3v_wPNs1iY7P6cZgHoldqbAXPCF8-4L3AnpQ2LynbEcZhNM7p6HHGQz3QL3u4M7KCVKLUXcqGD6NJZSC7lsS8UaXywofAsAYo19mTHMuDaRBh4IIW86FeIJDkxyKhHyIiSEdtBRfiNWGtYU_0GrgZAsup7wl6g81nPC_gozJ2UNpOxmfQpwTOVBEukWdskeWD-erYoR6OvHfz33z4GM_iw3UoUGCj5IWqApY7FfpEIAHkVId"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-8 right-8">
+<p class="text-tertiary font-headline text-2xl font-black">أمنك، أولويتنا القصوى.</p>
+</div>
+</div>
+<!-- Section: Data Protection -->
+<section id="data">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-12 h-[1px] bg-primary"></span>
+<h2 class="font-headline text-3xl font-bold text-on-background">حماية البيانات</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/15">
+<h4 class="text-on-background font-bold mb-4">التشفير التام</h4>
+<p class="text-on-surface-variant text-sm leading-loose">نستخدم بروتوكولات تشفير متقدمة لحماية معلوماتك المالية والبيانات الشخصية أثناء عمليات الانتقال والتخزين.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/15">
+<h4 class="text-on-background font-bold mb-4">حقوق الخصوصية</h4>
+<p class="text-on-surface-variant text-sm leading-loose">لك الحق الكامل في الوصول إلى بياناتك، تعديلها، أو طلب مسحها من أنظمتنا وفقاً للوائح المنظمة.</p>
+</div>
+</div>
+</section>
+<!-- Section: Limitation of Liability -->
+<section class="relative overflow-hidden p-10 bg-gradient-to-br from-surface-container-low to-surface rounded-[2.5rem] border border-outline-variant/10" id="liability">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 blur-[80px] rounded-full"></div>
+<div class="flex items-center gap-4 mb-8">
+<span class="w-12 h-[1px] bg-error"></span>
+<h2 class="font-headline text-3xl font-bold text-on-background">حدود المسؤولية</h2>
+</div>
+<div class="editorial-text text-on-surface-variant text-lg">
+<p>
+                            بأقصى حد يسمح به القانون المعمول به، لا تتحمل زارز أو موردوها أي مسؤولية عن أي أضرار غير مباشرة، عرضية، أو تبعية تنشأ عن استخدامك أو عدم قدرتك على استخدام المنصة.
+                        </p>
+<p class="mt-4">
+                            نحن نسعى جاهدين لضمان دقة المعلومات المعروضة، ومع ذلك، قد تحدث أخطاء تقنية أو مطبعية في أوصاف المنتجات أو الأسعار، ونحتفظ بالحق في تصحيحها في أي وقت.
+                        </p>
+</div>
+</section>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-10 mt-auto bg-[#1d0c26] bg-gradient-to-t from-[#26142f] to-[#1d0c26] rtl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 max-w-7xl mx-auto text-right">
+<div>
+<span class="text-2xl font-bold text-[#d0bcff] mb-4 block">زارز</span>
+<p class="text-[#958da2] leading-relaxed max-w-xs">
+                    تجربة تسوق فريدة تجمع بين الفخامة والتقنية الحديثة. السيادة في الاختيار هي عنواننا.
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-surface font-bold">روابط سريعة</h4>
+<ul class="space-y-2">
+<li><a class="text-[#958da2] hover:text-white transition-colors duration-200" href="#">الأسئلة الشائعة</a></li>
+<li><a class="text-[#d7baff] underline underline-offset-8" href="#">الشروط والأحكام</a></li>
+<li><a class="text-[#958da2] hover:text-white transition-colors duration-200" href="#">سياسة الخصوصية</a></li>
+</ul>
+</div>
+<div class="space-y-4 text-[#958da2]">
+<h4 class="text-on-surface font-bold">تواصل معنا</h4>
+<p>المملكة العربية السعودية، الرياض</p>
+<p>support@zarz.app</p>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/10 text-center text-[#958da2] text-sm">
+            © ٢٠٢٤ زارز. جميع الحقوق محفوظة
+        </div>
+</footer>
+</body></html>

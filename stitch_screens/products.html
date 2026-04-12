@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#412e4a",
+                    "inverse-surface": "#f5d9fe",
+                    "on-primary": "#3b0091",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed": "#eddcff",
+                    "secondary": "#d2bfe8",
+                    "inverse-on-surface": "#3c2945",
+                    "on-tertiary-container": "#f5e9ff",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed-variant": "#5600ca",
+                    "surface-container-lowest": "#180721",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#eddcff",
+                    "secondary-fixed-dim": "#d2bfe8",
+                    "surface-container-highest": "#412e4a",
+                    "on-primary-container": "#f3eaff",
+                    "outline": "#958da2",
+                    "surface": "#1d0c26",
+                    "primary-container": "#7d3cff",
+                    "background": "#1d0c26",
+                    "surface-container": "#2a1833",
+                    "on-secondary": "#382a4a",
+                    "on-tertiary-fixed-variant": "#593090",
+                    "surface-bright": "#45324e",
+                    "on-secondary-container": "#c0aed6",
+                    "inverse-primary": "#6f27f1",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#4f4062",
+                    "tertiary": "#d7baff",
+                    "surface-tint": "#d0bcff",
+                    "on-primary-fixed": "#23005c",
+                    "on-tertiary-fixed": "#290055",
+                    "on-surface": "#f5d9fe",
+                    "outline-variant": "#4a4456",
+                    "surface-container-high": "#35233e",
+                    "on-background": "#f5d9fe",
+                    "secondary-container": "#4f4062",
+                    "primary-fixed-dim": "#d0bcff",
+                    "on-secondary-fixed": "#221534",
+                    "tertiary-container": "#7f57b8",
+                    "surface-container-low": "#26142f",
+                    "on-surface-variant": "#cbc3d9",
+                    "primary-fixed": "#e9ddff",
+                    "surface-dim": "#1d0c26",
+                    "primary": "#d0bcff",
+                    "tertiary-fixed-dim": "#d7baff",
+                    "on-tertiary": "#411478"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Be Vietnam Pro"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #1d0c26;
+        color: #f5d9fe;
+      }
+      .glass-nav {
+        background: rgba(29, 12, 38, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .royal-gradient {
+        background: linear-gradient(135deg, #d0bcff 0%, #7d3cff 100%);
+      }
+      .royal-scrim {
+        background: linear-gradient(to top, rgba(29, 12, 38, 0.9) 0%, transparent 100%);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav bg-[#1d0c26]/60 backdrop-blur-[20px]">
+<div class="flex justify-between items-center px-12 py-5 w-full max-w-screen-2xl mx-auto font-['Be_Vietnam_Pro'] text-right antialiased flex-row">
+<div class="text-3xl font-black text-[#d0bcff] tracking-tight">زارز</div>
+<div class="hidden md:flex items-center gap-10 flex-row">
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300" href="#">الرئيسية</a>
+<a class="text-[#d0bcff] font-bold border-b-2 border-[#d0bcff] pb-1" href="#">الخدمات</a>
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300" href="#">سلة المشتريات</a>
+<a class="text-[#958da2] font-medium hover:text-[#d7baff] hover:bg-white/5 transition-all duration-300" href="#">اتصل بنا</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative hover:text-[#d7baff] transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary-container text-[10px] w-4 h-4 rounded-full flex items-center justify-center">٢</span>
+</button>
+<button class="hover:text-[#d7baff] transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero / Category Header -->
+<header class="pt-32 pb-16 px-12 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+<div class="space-y-6">
+<h1 class="text-6xl font-black text-primary tracking-tight font-headline leading-tight">
+                    عالم من <br/>
+<span class="text-transparent bg-clip-text royal-gradient">التميز الرقمي</span>
+</h1>
+<p class="text-lg text-outline max-w-lg leading-relaxed">
+                    اكتشف مجموعة واسعة من الخدمات المتميزة المصممة لتعزيز حضورك الرقمي، من الذكاء الاصطناعي إلى تطوير المواقع وأكثر.
+                </p>
+<div class="flex gap-4">
+<div class="h-1 w-20 bg-primary-container rounded-full"></div>
+<div class="h-1 w-8 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+<div class="relative hidden lg:block h-64">
+<div class="absolute inset-0 bg-surface-container-low rounded-3xl overflow-hidden opacity-40">
+<img alt="digital abstract" class="w-full h-full object-cover" data-alt="abstract flowing digital ribbons of light in shades of purple and violet against a deep dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASfSdqNfWt7GOngOlL3970worW0DS6MNKI0cb_l07zV37hfzPJAYK4GlSGg_ecgDodLP9ORZiGGn8WTrEonGZrCCHndPcqkIFHmrSeXs10jpJ23fpBHQdqwWQXptgxoh5dyMQkHGgF48QVEXHDEHhLT2lnAsYV6VhB66Kjo0pgzM9z9s3dLrXXmOJvU5r25K06muAFADmBgt45B-fb4cASz3I-9VeDk307RsGQrvcxJp1L_mhFSvKCJjPnxhtMRzV-Gqey3GoCaHZx"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</header>
+<!-- Product Filter / Categories Taps -->
+<section class="px-12 max-w-screen-2xl mx-auto mb-16 overflow-x-auto">
+<div class="flex flex-row-reverse gap-4 pb-4">
+<button class="px-8 py-3 rounded-full royal-gradient text-on-primary font-bold shadow-lg shadow-primary-container/20 whitespace-nowrap">الكل</button>
+<button class="px-8 py-3 rounded-full bg-surface-container text-outline hover:text-primary transition-colors whitespace-nowrap">التواصل الاجتماعي</button>
+<button class="px-8 py-3 rounded-full bg-surface-container text-outline hover:text-primary transition-colors whitespace-nowrap">الذكاء الاصطناعي</button>
+<button class="px-8 py-3 rounded-full bg-surface-container text-outline hover:text-primary transition-colors whitespace-nowrap">المواقع والمتاجر</button>
+<button class="px-8 py-3 rounded-full bg-surface-container text-outline hover:text-primary transition-colors whitespace-nowrap">الألعاب</button>
+</div>
+</section>
+<!-- Main Content Grid -->
+<main class="px-12 max-w-screen-2xl mx-auto pb-24 space-y-24">
+<!-- Category: Social Media -->
+<div>
+<div class="flex flex-row-reverse items-center justify-between mb-8">
+<h2 class="text-3xl font-bold font-headline border-r-4 border-primary pr-4">خدمات التواصل الاجتماعي</h2>
+<a class="text-tertiary hover:underline" href="#">عرض المزيد</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-8px]">
+<div class="relative h-48 overflow-hidden">
+<img alt="Instagram" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="vibrant pink and purple glow highlighting a 3D instagram logo on a dark reflective surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFl-UOyjYE-bUrzeSQHNm68tqVgAddCsqF9yFxIs-FRJqZCcxBiDgV3ODnREnVpgZov8-DzVnjSJeUQFBZn3g1oFZTpi4UFr3Tc9Xen5ewWBBZipwSyIdG5ptxrO9JQLlPe55Fg555uh9C15iaICmazoIMJ36G9kHaFF6n4Xm4qv5Qjpi6OGdcxQA1AEzoUcBMbSf_QkkMiACfppelg2UFlJTy9MnFazVuw7dzzKhPedXWpEEGBaStJ-IVdWBtWYckEgRjokdXvXv2"/>
+<div class="absolute inset-0 royal-scrim flex items-end p-4">
+<span class="text-xs font-bold bg-primary/20 text-primary px-2 py-1 rounded">خدمة سريعة</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<h3 class="text-xl font-bold">باقة انستقرام المتكاملة</h3>
+<p class="text-outline text-sm line-clamp-2">زيادة المتابعين والتفاعل بطرق حقيقية وآمنة تماماً.</p>
+<div class="flex justify-between items-center pt-2">
+<span class="text-2xl font-bold text-tertiary">٩٩ ر.س</span>
+<button class="w-10 h-10 rounded-full royal-gradient flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-8px]">
+<div class="relative h-48 overflow-hidden">
+<img alt="TikTok" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="electric blue and neon red tiktok logo glowing in a dark room with light trails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKwc3Cpf-Lc-myDytG7U9AJif_NPKCYkAcFgb7RNVQZJJs6rDbJbY7EKeFHax5Xz5Nqbrg9R-SZa6Ui587qY9IpiQWI4xEJQQNslZo1Io9M77dA5JKl4eMDY-e3HF6BUGITdNExr3ZrQGI6AokfEMsYezXXll4ed5ev_tjPKGqLAAYbJg4JtVIqXSLGuvylwUxPCheC0ldDYgCtG7Gxlj8CMD6SrphlHAr0ahdLibEtzZ5_sKZegZ-Qm3gn4LnFgl8_tuZc_yed9pL"/>
+<div class="absolute inset-0 royal-scrim flex items-end p-4"></div>
+</div>
+<div class="p-6 space-y-4">
+<h3 class="text-xl font-bold">دعم حسابات تيك توك</h3>
+<p class="text-outline text-sm line-clamp-2">تصدر الاكسبلور وزيادة المشاهدات بشكل فوري.</p>
+<div class="flex justify-between items-center pt-2">
+<span class="text-2xl font-bold text-tertiary">٧٥ ر.س</span>
+<button class="w-10 h-10 rounded-full royal-gradient flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: AI Services -->
+<div>
+<div class="flex flex-row-reverse items-center justify-between mb-8">
+<h2 class="text-3xl font-bold font-headline border-r-4 border-primary pr-4">خدمات الذكاء الاصطناعي</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Large Feature Card -->
+<div class="relative group bg-surface-container-low rounded-3xl overflow-hidden p-8 flex flex-col md:flex-row gap-8 items-center border border-outline/10">
+<div class="w-full md:w-1/2 rounded-2xl overflow-hidden h-64 shadow-2xl">
+<img alt="AI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="futuristic artificial intelligence glowing core with intricate circuit patterns in electric purple and cyan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_MefUQNTKuocySk8-FqwhHdHN_yISafEf2OuMt6t9y8Sf8e8HCZlA1KMCN8aW4AUlZYGm1mjpn99nWwJfQNWFy2nGUi6DEO7Hdo9gRiyR2i5YxAsIEYGo4b2RapNKL2tjWbixq37ARnPLuB8qhMtpOkrPqfWBtKY8fyDwLshBIWeY9IwZQtv0OXVPySznqfryEAb7McgxXo4EhAnh6HNcxU9e1UOiDWzUxAgvSgrIT6Z3rFN2Xc7joFE2dy8SD3S37UWdaoDwp_8y"/>
+</div>
+<div class="w-full md:w-1/2 space-y-4">
+<h3 class="text-3xl font-black text-primary tracking-tight">ChatGPT Plus</h3>
+<p class="text-outline leading-relaxed">اشتراك شهري رسمي للوصول لأحدث نماذج GPT-4 مع سرعة استجابة فائقة ومميزات حصرية للمحترفين.</p>
+<div class="flex items-center gap-4 pt-4">
+<span class="text-3xl font-bold text-tertiary">١٢٠ ر.س</span>
+<button class="px-6 py-2 rounded-full royal-gradient text-on-primary font-bold">أضف للسلة</button>
+</div>
+</div>
+</div>
+<!-- Another Feature Card -->
+<div class="relative group bg-surface-container-low rounded-3xl overflow-hidden p-8 flex flex-col md:flex-row gap-8 items-center border border-outline/10">
+<div class="w-full md:w-1/2 rounded-2xl overflow-hidden h-64 shadow-2xl">
+<img alt="Gemini" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="ethereal flowing liquid metal shapes in iridescent violet and silver representing neural network connections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbr_F4a2upeL5uTzYH-cCdrKPUUVYSIEPVr0dSYoqjRurhfwjUL50zQA7vCMFVldsLxIjOg6uQRPhOyLXCgAWElRiGF7TvxvkdY9uD6OUWxFcyF8oC3ruLuuTZwJc4g2AHK1ztPbdEWb-K57jayxLGqBJTP8s0pnM46tQxKdvsTxF_OMJ5YL1gJ57H0EmKETUQ-sHx9j79sXPYiPTTfk798vTgnbX3JQqIxdWNrWOC2SzdGrrQB4kbG2kxSOFOjWUJ50YlbjpEWyYa"/>
+</div>
+<div class="w-full md:w-1/2 space-y-4">
+<h3 class="text-3xl font-black text-primary tracking-tight">Gemini Pro</h3>
+<p class="text-outline leading-relaxed">استمتع بقوة جوجل المطلقة في الذكاء الاصطناعي مع اشتراك جيمناي برو المتطور للمبدعين.</p>
+<div class="flex items-center gap-4 pt-4">
+<span class="text-3xl font-bold text-tertiary">٨٩ ر.س</span>
+<button class="px-6 py-2 rounded-full royal-gradient text-on-primary font-bold">أضف للسلة</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Website Services (Bento Style) -->
+<div>
+<div class="flex flex-row-reverse items-center justify-between mb-8">
+<h2 class="text-3xl font-bold font-headline border-r-4 border-primary pr-4">خدمات المواقع والمتاجر</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-surface-container rounded-3xl p-10 flex flex-col justify-between group">
+<div class="space-y-6">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<h3 class="text-4xl font-black">إنشاء متجر سلة / زد</h3>
+<p class="text-outline text-lg max-w-lg">نؤسس لك متجرك المتكامل من الألف إلى الياء، مع ضبط الإعدادات والشحن وبوابات الدفع.</p>
+</div>
+<div class="flex justify-between items-end mt-12">
+<div class="text-4xl font-bold text-tertiary">٤٥٠ ر.س</div>
+<button class="px-10 py-4 rounded-full bg-on-background text-background font-black hover:bg-primary transition-all">اطلب الآن</button>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-3xl p-10 space-y-8 flex flex-col justify-between">
+<div class="space-y-4">
+<h3 class="text-2xl font-bold">تطوير المواقع</h3>
+<p class="text-outline">برمجة خاصة وواجهات عصرية تناسب مشروعك.</p>
+</div>
+<img alt="Web Development" class="rounded-2xl h-40 object-cover" data-alt="close up of code on a computer screen with vibrant purple and pink ambient lighting reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT4oSpOPR7mx-9blwbCWlFGFrSuY6FEV4N7UaoXNJ8G4b96G3ZTimgKHPuGMd96qQqkzoaDv6OpY2GZd6u3yJRIBjypExrqdIaU8_9ToHH0_eXwXxLA3zrdXJWuRjf0eYAuHVaD-wAm4YfQjNnNO9juomXhX_31n1ekTJwm53iwaA-v2iuGNqTddHTIWLvqk8A-1y2DptplXe9qLj4v_SUCYY5szGHSS6VFuDQRfmEpnxlGxkn55xpBA9En7L1FpmZ_WZVxN5ADJAB"/>
+<div class="text-2xl font-bold text-tertiary">تبدأ من ٩٩٩ ر.س</div>
+</div>
+</div>
+</div>
+<!-- Category: Games -->
+<div>
+<div class="flex flex-row-reverse items-center justify-between mb-8">
+<h2 class="text-3xl font-bold font-headline border-r-4 border-primary pr-4">خدمات الألعاب</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- PUBG -->
+<div class="bg-surface-container-low p-6 rounded-2xl space-y-4 border border-outline/5 hover:border-primary/30 transition-all">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface">
+<img alt="PUBG" class="w-full h-full object-cover" data-alt="professional gaming setup with mechanical keyboard and mouse glowing in deep purple and indigo hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjsHWMrryxdb2SLH0gRANJV3XPBX8c4EUIVxsJHLaOYLrnoY1oWz_tm9ztwtT09M-Fb1E1jA9vGfrMiMBcnBCJKKQkF3TUy9upDgW0BNtNjoktOG6DfCdUiDqcJs7ygIQWjYo5yV0EPg2tiwp3O0VHmPbQy5QbW1ePVfwHhyzfG1TFEUlD-xh8uILohsIEqVH3xv0ytrLx6zYkjx6nWYvvDzsi1MV19caZ_aaPdFqXl8_3EVh4D7duCSM1sOQENqe8RrsFMfPB9N9P"/>
+</div>
+<h3 class="font-bold text-lg">شحن شدات PUBG</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">٤٥ ر.س</span>
+<button class="text-outline-variant hover:text-primary"><span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span></button>
+</div>
+</div>
+<!-- Free Fire -->
+<div class="bg-surface-container-low p-6 rounded-2xl space-y-4 border border-outline/5 hover:border-primary/30 transition-all">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface">
+<img alt="Gaming" class="w-full h-full object-cover" data-alt="overhead view of a gaming controller on a desk with dark moody purple lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvsjYTioM9YYs0pPKXwxcE2cb5pFoj6iBvtDQF1KHB9mC0qf_oYYN7djBMYUYPVI4BpKoyaUR9DstBl-SWNuI-c5-sjC66WO8rELYaWc6HY7guyAi--Tv-aK6Wih-4Bf3gxIcTCvyY13VdbeRZCE0rLqtu7Rj66obumYdN1VNzFQcdVWE0-8wEC1GFkxgZeMPGAYY57OQ4W5Z9ANSkZWGUXOdt6OxHbK9LwD1QwvV5REqEQ3K1eZQ_5AQc40xy1IZjtOk1b3KcJ85v"/>
+</div>
+<h3 class="font-bold text-lg">شحن جواهر Free Fire</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">٣٨ ر.س</span>
+<button class="text-outline-variant hover:text-primary"><span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span></button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-10 mt-auto bg-gradient-to-t from-[#26142f] to-[#1d0c26]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 max-w-7xl mx-auto text-right rtl font-['Manrope'] leading-relaxed">
+<div class="space-y-4">
+<span class="text-2xl font-bold text-[#d0bcff] mb-4 block">زارز</span>
+<p class="text-[#958da2]">وجهتكم الأولى لجميع الخدمات الرقمية والاشتراكات بأفضل الأسعار وأسرع تنفيذ.</p>
+<div class="flex gap-4 mt-6">
+<span class="material-symbols-outlined text-outline" data-icon="public">public</span>
+<span class="material-symbols-outlined text-outline" data-icon="mail">mail</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-lg font-bold text-white">روابط سريعة</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-[#958da2] hover:text-white transition-colors duration-200" href="#">من نحن</a>
+<a class="text-[#958da2] hover:text-white transition-colors duration-200" href="#">الأسئلة الشائعة</a>
+<a class="text-[#958da2] hover:text-white transition-colors duration-200" href="#">تتبع الطلب</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="text-lg font-bold text-white">قانوني</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-[#958da2] hover:text-white transition-colors duration-200" href="#">الشروط والأحكام</a>
+<a class="text-[#958da2] hover:text-white transition-colors duration-200" href="#">سياسة الخصوصية</a>
+</nav>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/5 text-center px-12">
+<p class="text-[#958da2] text-sm">© ٢٠٢٤ زارز. جميع الحقوق محفوظة</p>
+</div>
+</footer>
+</body></html>

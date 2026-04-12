@@ -1,0 +1,158 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isBootstrapAdmin() {
+      return isSignedIn()
+        && request.auth.token.email != null
+        && (request.auth.token.email == "medozxc7@gmail.com" || request.auth.token.email == "ezh37156@gmail.com");
+    }
+
+    function currentUserRecord() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function hasAdminRole() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && currentUserRecord().data.role == "admin";
+    }
+
+    function isAdmin() {
+      return isBootstrapAdmin() || hasAdminRole();
+    }
+
+    function isOwnUser(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function optionalString(value) {
+      return value == null || value is string;
+    }
+
+    function optionalStringWithin(value, maxLength) {
+      return value == null || (value is string && value.size() <= maxLength);
+    }
+
+    function validUser(data, userId) {
+      return data.keys().hasAll([
+        'uid',
+        'name',
+        'email',
+        'phone',
+        'photoURL',
+        'createdAt',
+        'role'
+      ]) &&
+      data.keys().hasOnly([
+        'uid',
+        'name',
+        'email',
+        'phone',
+        'photoURL',
+        'createdAt',
+        'role'
+      ]) &&
+      data.uid is string &&
+      data.uid == userId &&
+      data.uid.size() > 0 &&
+      data.uid.size() <= 128 &&
+      optionalStringWithin(data.name, 100) &&
+      optionalStringWithin(data.email, 200) &&
+      optionalStringWithin(data.phone, 40) &&
+      optionalStringWithin(data.photoURL, 500) &&
+      optionalStringWithin(data.role, 40) &&
+      data.createdAt is timestamp;
+    }
+
+    function validOrder(data) {
+      return data.keys().hasAll([
+        'orderNumber',
+        'productId',
+        'quantity',
+        'name',
+        'phone',
+        'paymentMethod',
+        'paymentMethodLabel',
+        'paymentReference',
+        'total',
+        'currency',
+        'status',
+        'items',
+        'details',
+        'date',
+        'userId',
+        'userEmail'
+      ]) &&
+      data.orderNumber is string &&
+      data.orderNumber.size() > 0 &&
+      data.orderNumber.size() <= 40 &&
+      optionalString(data.productId) &&
+      data.quantity is int &&
+      data.quantity > 0 &&
+      data.quantity <= 9999 &&
+      data.name is string &&
+      data.name.size() >= 2 &&
+      data.name.size() <= 100 &&
+      data.phone is string &&
+      data.phone.size() >= 6 &&
+      data.phone.size() <= 20 &&
+      data.paymentMethod is string &&
+      (data.paymentMethod == 'whatsapp' || data.paymentMethod == 'bankak') &&
+      data.paymentMethodLabel is string &&
+      data.paymentMethodLabel.size() > 0 &&
+      data.paymentMethodLabel.size() <= 40 &&
+      optionalString(data.paymentReference) &&
+      data.total is string &&
+      data.total.size() > 0 &&
+      data.total.size() <= 50 &&
+      data.currency is string &&
+      data.currency.size() > 0 &&
+      data.currency.size() <= 10 &&
+      data.status is string &&
+      data.status == 'pending' &&
+      data.items is list &&
+      data.items.size() > 0 &&
+      data.items.size() <= 50 &&
+      data.details is string &&
+      data.details.size() > 0 &&
+      data.details.size() <= 5000 &&
+      data.userId is string &&
+      data.userId.size() > 0 &&
+      data.userId.size() <= 128 &&
+      data.userEmail is string &&
+      data.userEmail.size() >= 0 &&
+      data.userEmail.size() <= 200 &&
+      data.date is timestamp;
+    }
+
+    match /users/{userId} {
+      allow get: if isAdmin() || isOwnUser(userId);
+      allow list: if isAdmin();
+      allow create: if validUser(request.resource.data, userId) &&
+        (isBootstrapAdmin() || (isOwnUser(userId) && request.resource.data.role == null));
+      allow update: if validUser(request.resource.data, userId) &&
+        (isAdmin() || (
+          isOwnUser(userId) &&
+          request.resource.data.uid == resource.data.uid &&
+          request.resource.data.createdAt == resource.data.createdAt &&
+          request.resource.data.role == resource.data.role
+        ));
+      allow delete: if isAdmin();
+    }
+
+    match /orders/{orderId} {
+      allow read: if isAdmin() || (isSignedIn() && resource.data.userId == request.auth.uid);
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid && validOrder(request.resource.data);
+      allow update: if isAdmin();
+      allow delete: if isAdmin() || (isSignedIn() && resource.data.userId == request.auth.uid);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
