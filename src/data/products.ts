@@ -22,7 +22,7 @@ export const products: Product[] = [
     desc: "استمتع بأقوى نسخة من شات جي بي تي مع سرعة وأداء متقدم. دخول بجهازين، تجديد اشتراك أوفر، ضمان كامل المدة، ودعم فني مستمر.",
     basePrice: 20000.0,
     originalPrice: 33500.0,
-    image: "/assets/chatgpt-plus-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/chatgpt-plus-v4.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["دخول بجهازين", "تجديد اشتراك أوفر", "ضمان كامل المدة", "دعم فني مستمر"]
@@ -34,7 +34,7 @@ export const products: Product[] = [
     desc: "وصول إلى النسخة المتقدمة من جيميني. أداء فائق وتحليل أعمق للبيانات.",
     basePrice: 15000.0,
     originalPrice: 25000.0,
-    image: "/assets/gemini-pro-v3.webp",
+    image: import.meta.env.BASE_URL + "assets/gemini-pro-v3.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["دخول بجهازين", "تجديد اشتراك أوفر", "ضمان كامل المدة", "دعم فني مستمر"]
@@ -48,7 +48,7 @@ export const products: Product[] = [
     desc: "خدمة إنشاء المتاجر الإلكترونية المتكاملة: تصميم عصري، إدارة المنتجات، ربط بوابة الدفع الآمنة، وتهيئة محركات البحث (SEO).",
     basePrice: 130000.0,
     originalPrice: 216660.0,
-    image: "/assets/ecommerce-store-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/ecommerce-store-v4.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["تصاميم احترافية", "دفع آمن", "تسويق فعال", "متوافق مع الهواتف"]
@@ -60,7 +60,7 @@ export const products: Product[] = [
     desc: "نظام اشتراك شهري، قوالب متنوعة وجاهزة، حلول دفع مدمجة ودعم فني مستمر.",
     basePrice: 25000.0,
     originalPrice: 41660.0,
-    image: "/assets/webstore-rental-v1.webp",
+    image: import.meta.env.BASE_URL + "assets/webstore-rental-v1.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["قوالب احترافية", "دفع آمن", "تحديثات دورية"]
@@ -72,7 +72,7 @@ export const products: Product[] = [
     desc: "تطوير المواقع الإلكترونية، إصلاح الأخطاء البرمجية وإضافة ميزات جديدة مخصصة.",
     basePrice: 85000.0,
     originalPrice: 141660.0,
-    image: "/assets/web-modification-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/web-modification-v4.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["تطوير مخصص", "إصلاح الأخطاء", "تحسين الأداء"]
@@ -86,7 +86,7 @@ export const products: Product[] = [
     desc: "عرض مذهل! إذا تم شراء ألف متابع يأتي معها هدية ألف لايك وألفين مشاهدة. السعر للمتابع الواحد.",
     basePrice: 9.40,
     originalPrice: 15.60,
-    image: "/assets/instagram-followers-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/instagram-followers-v4.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["هدية 1000 لايك", "هدية 2000 مشاهدة (لشراء ألف متابع)", "توصيل لليوزرنيم", "خدمة مضمونة"]
@@ -98,7 +98,7 @@ export const products: Product[] = [
     desc: "عرض مذهل! إذا تم شراء ألف متابع يأتي معها هدية ألف لايك وألفين مشاهدة. السعر للمتابع الواحد.",
     basePrice: 9.40,
     originalPrice: 15.60,
-    image: "/assets/tiktok-followers-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/tiktok-followers-v4.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["هدية 1000 لايك", "هدية 2000 مشاهدة (لشراء ألف متابع)", "توصيل لليوزرنيم", "خدمة مضمونة"]
@@ -110,7 +110,7 @@ export const products: Product[] = [
     desc: "عرض مذهل! إذا تم شراء ألف متابع يأتي معها هدية ألف لايك وألفين مشاهدة. السعر للمتابع الواحد.",
     basePrice: 9.40,
     originalPrice: 15.60,
-    image: "/assets/facebook-followers-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/facebook-followers-v4.webp",
     rating: "5.0",
     outOfStock: false,
     features: ["هدية 1000 لايك", "هدية 2000 مشاهدة (لشراء ألف متابع)", "نمو مستمر", "خدمة مضمونة"]
@@ -124,7 +124,7 @@ export const products: Product[] = [
     desc: "توصيل مباشر للمعرف ID، حزم وعروض حصرية، شحن آمن ومضمون، ودعم فني مستمر.",
     basePrice: 1000.0,
     originalPrice: 1700.0,
-    image: "/assets/pubg-uc-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/pubg-uc-v4.webp",
     rating: "5.0",
     outOfStock: true,
     features: ["توصيل مباشر للمعرف ID", "حزم وعروض حصرية", "شحن آمن", "دعم فني مستمر"]
@@ -136,7 +136,7 @@ export const products: Product[] = [
     desc: "توصيل مباشر للمعرف ID، حزم وعروض حصرية، شحن آمن ومضمون، ودعم مستمر.",
     basePrice: 800.0,
     originalPrice: 1350.0,
-    image: "/assets/freefire-diamonds-v4.webp",
+    image: import.meta.env.BASE_URL + "assets/freefire-diamonds-v4.webp",
     rating: "5.0",
     outOfStock: true,
     features: ["توصيل مباشر للمعرف ID", "حزم وعروض حصرية", "شحن آمن", "دعم مستمر"]

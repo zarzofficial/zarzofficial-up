@@ -86,7 +86,7 @@ export default function App() {
       <DynamicTitle />
       <ScrollToTop />
       {!loaded && <IntroLoader onFinished={handleIntroFinished} />}
-      <div className={`min-h-screen bg-background font-sans text-foreground selection:bg-primary/30 flex flex-col transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/30 flex flex-col">
         <Navbar />
         <main className="flex-1">
           <Routes>

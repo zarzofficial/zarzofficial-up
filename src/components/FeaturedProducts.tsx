@@ -16,8 +16,8 @@ export function FeaturedProducts() {
 
   return (
     <section className="py-20 md:py-28 px-6 md:px-12 bg-background relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[60px] md:blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[50px] md:blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-14">
