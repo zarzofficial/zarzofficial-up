@@ -1,16 +1,16 @@
 export type Category = 'social' | 'ai' | 'web' | 'gaming';
 
 export interface Product {
-    id: string;
-    title: string;
-    category: Category;
-    desc: string;
-    basePrice: number;
-    image: string;
-    rating: string;
-    outOfStock: boolean;
-    features: string[];
-    originalPrice?: number;
+  id: string;
+  title: string;
+  category: Category;
+  desc: string;
+  basePrice: number;
+  image: string;
+  rating: string;
+  outOfStock: boolean;
+  features: string[];
+  originalPrice?: number;
 }
 
 export const products: Product[] = [
