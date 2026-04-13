@@ -55,7 +55,7 @@ export function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-l from-background via-transparent to-background/50"></div>
         </div>
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 xl:gap-16">
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 xl:gap-16 mt-12 md:mt-0">
 
           {/* Main Hero Text */}
           <div className="text-start flex-1 min-w-0">

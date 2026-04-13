@@ -31,34 +31,48 @@ export function Contact() {
         {/* Contact Details Sidebar (3/12) */}
         <aside className="lg:col-span-4 space-y-8">
           
-          {/* Info Card 1 */}
-          <div className="perf-panel bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
-            <div className="w-12 h-12 primary-gradient rounded-xl flex items-center justify-center mb-6 shadow-[0_8px_20px_rgba(125,60,255,0.3)]">
-              <span className="material-symbols-outlined text-on-primary text-xl">mail</span>
+          {/* Info Card 1: Email */}
+          <div className="perf-panel bg-surface-container-low p-5 rounded-[1.5rem] transition-transform hover:scale-[1.02] duration-500 flex items-center justify-between">
+            <div className="text-right">
+              <h3 className="font-headline text-lg font-bold mb-1">البريد الإلكتروني</h3>
+              <a href="mailto:medozxc7@gmail.com" className="text-outline text-base font-medium hover:text-tertiary transition-colors" dir="ltr">medozxc7@gmail.com</a>
             </div>
-            <h3 className="font-headline text-xl font-bold mb-2">تواصل معنا عبر البريد</h3>
-            <p className="text-on-surface-variant mb-4">راسلنا في أي وقت وسنقوم بالرد خلال ٢٤ ساعة.</p>
-            <a href="mailto:support@zarz.com" className="text-tertiary font-bold text-lg hover:underline underline-offset-4">support@zarz.com</a>
+            <div className="w-12 h-12 bg-[#e11d48]/10 rounded-xl flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-[#e11d48]">mail</span>
+            </div>
           </div>
 
-          {/* Info Card 2 */}
-          <div className="perf-panel bg-surface-container-low p-8 rounded-[2rem] transition-transform hover:scale-[1.02] duration-500">
-            <div className="w-12 h-12 primary-gradient rounded-xl flex items-center justify-center mb-6 shadow-[0_8px_20px_rgba(125,60,255,0.3)]">
-              <span className="material-symbols-outlined text-on-primary text-xl">chat_bubble</span>
+          {/* Info Card 2: Saudi Phone */}
+          <div className="perf-panel bg-surface-container-low p-5 rounded-[1.5rem] transition-transform hover:scale-[1.02] duration-500 flex items-center justify-between">
+            <div className="text-right">
+              <h3 className="font-headline text-lg font-bold mb-1">هاتف السعودية</h3>
+              <a href="tel:+966504663493" className="text-outline text-base font-medium hover:text-tertiary transition-colors" dir="ltr">+966 50 466 3493</a>
             </div>
-            <h3 className="font-headline text-xl font-bold mb-2">واتساب مباشر</h3>
-            <p className="text-on-surface-variant mb-4">تواصل سريع وفوري مع فريق الدعم الفني.</p>
-            <a href="https://wa.me/966500000000" className="text-tertiary font-bold text-lg hover:underline underline-offset-4" dir="ltr">+966 50 000 0000</a>
+            <div className="w-12 h-12 bg-[#e11d48]/10 rounded-xl flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-[#e11d48]">call</span>
+            </div>
           </div>
 
-          {/* Decorative Asset */}
-          <div className="hidden lg:block relative h-48 rounded-[2rem] overflow-hidden group">
-            <img 
-              alt="Decorative Abstract"
-              className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXgF0z5f0-DoCcOlyqmUOdqIl603LMuwWVfAIDlGfHlAMS1R6Bi9hX-0RLiABd98wJLtbJthOc5TD3du1FAaGJIu70RgbUzcbM6aBiuHrDKE72Be-e4Lo1FKxQ5esyAKkWWjRQSFLD0WcQCbhW56yQcWGN4p1oBrg8Di5sStHR67GleZZGnQgnk9KBTLOl5NtnblFMNNRcCXIUbZTIprzUPEOdM5P55Uyrh9YOMNlUJ5sPIxR5PBWrd8HhNlJnKhz6SNAVCLhD2KTd"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+          {/* Info Card 3: WhatsApp Support */}
+          <div className="perf-panel bg-surface-container-low p-5 rounded-[1.5rem] transition-transform hover:scale-[1.02] duration-500 flex items-center justify-between">
+            <div className="text-right">
+              <h3 className="font-headline text-lg font-bold mb-1">واتساب ودعم مباشر</h3>
+              <a href="https://wa.me/201500007300" className="text-outline text-base font-medium hover:text-tertiary transition-colors" dir="ltr">+20 150 000 7300</a>
+            </div>
+            <div className="w-12 h-12 bg-[#e11d48]/10 rounded-xl flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-[#e11d48]">support_agent</span>
+            </div>
+          </div>
+
+          {/* Info Card 4: Local Number */}
+          <div className="perf-panel bg-surface-container-low p-5 rounded-[1.5rem] transition-transform hover:scale-[1.02] duration-500 flex items-center justify-between">
+            <div className="text-right">
+              <h3 className="font-headline text-lg font-bold mb-1">رقم محلي</h3>
+              <a href="tel:0116976827" className="text-outline text-base font-medium hover:text-tertiary transition-colors" dir="ltr">0116976827</a>
+            </div>
+            <div className="w-12 h-12 bg-[#e11d48]/10 rounded-xl flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-[#e11d48]">phone_iphone</span>
+            </div>
           </div>
         </aside>
 

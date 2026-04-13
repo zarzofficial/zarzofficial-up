@@ -171,21 +171,28 @@ function StoreProductCard({
       >
         <img
           alt={product.title}
-          className="w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-[1.03]"
+          className={`w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-[1.03] ${product.outOfStock ? 'opacity-40 grayscale sepia-[.3]' : ''}`}
           src={product.image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"}
           loading="lazy"
           decoding="async"
           fetchPriority="low"
           referrerPolicy="no-referrer"
         />
+        {product.outOfStock && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
+            <span className="bg-[#fc1f40] text-white font-black px-5 py-2.5 rounded-full border border-white/20 sm:backdrop-blur-md shadow-2xl transform shadow-red-500/20 md:scale-110">
+              نفدت الكمية
+            </span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/20 flex flex-col justify-between p-4 pointer-events-none">
           <div className="flex justify-end w-full">
-            {product.originalPrice && (
+            {product.originalPrice && product.originalPrice > product.basePrice && !product.outOfStock && (
               <span
                 className="ml-auto rounded-full bg-[#ff3b30] px-3 py-1 text-xs font-bold tracking-wider text-white shadow-sm"
                 style={{ marginRight: "auto", marginLeft: "0" }}
               >
-                -40%
+                -{Math.round(((product.originalPrice - product.basePrice) / product.originalPrice) * 100)}%
               </span>
             )}
           </div>
@@ -208,14 +215,22 @@ function StoreProductCard({
         <div className="mt-auto flex flex-col gap-4 border-t border-outline-variant/10 pt-4">
           <div className="flex w-full items-start justify-between">
             <div className="flex flex-col text-right">
-              <span className={`text-2xl font-bold text-tertiary ${metrics.reduceEffects ? "" : "drop-shadow-sm"}`}>
-                {product.basePrice} ج.س
-              </span>
-              {product.originalPrice && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-outline/60 line-through">{product.originalPrice} ج.س</span>
-                  <span className="text-[10px] font-bold text-[#ff3b30]">خصم حصري</span>
-                </div>
+              {product.outOfStock && (product.id === "شدات-ببجي" || product.id === "جواهر-فري-فاير") ? (
+                <span className={`text-xl font-bold text-outline ${metrics.reduceEffects ? "" : "drop-shadow-sm"}`}>
+                  غير متوفر حالياً
+                </span>
+              ) : (
+                <>
+                  <span className={`text-2xl font-bold ${product.outOfStock ? 'text-outline/40 line-through' : 'text-tertiary'} ${metrics.reduceEffects ? "" : "drop-shadow-sm"}`}>
+                    {product.basePrice.toLocaleString()} ج.س
+                  </span>
+                  {product.originalPrice && product.originalPrice > product.basePrice && !product.outOfStock && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-outline/60 line-through">{product.originalPrice.toLocaleString()} ج.س</span>
+                      <span className="text-[10px] font-bold text-[#ff3b30]">خصم حصري</span>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </div>
