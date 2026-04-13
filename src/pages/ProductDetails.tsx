@@ -142,17 +142,23 @@ export function ProductDetails() {
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-16 relative">
-      <button 
-        onClick={() => navigate(-1)} 
-        className="absolute top-2 left-4 md:top-6 md:left-8 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-background/80 border border-white/10 shadow-lg text-muted-foreground hover:text-white hover:bg-white/10 hover:border-white/20 transition-all sm:backdrop-blur-md group"
-        aria-label="الخروج والعودة"
-      >
-        <X className="w-6 h-6 transition-transform group-hover:scale-110" />
-      </button>
+      {/* Top action bar: Prevents any overlaps with navbar by using standard document flow */}
+      <div className="flex items-center justify-between w-full mb-8 relative z-20">
+        <div 
+          className="flex items-center text-muted-foreground hover:text-primary transition-colors cursor-pointer group" 
+          onClick={() => navigate(-1)}
+        >
+          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          <span className="font-semibold text-lg">العودة للمتجر</span>
+        </div>
 
-      <div className="flex items-center text-muted-foreground hover:text-primary transition-colors mb-6 w-fit md:hidden cursor-pointer" onClick={() => navigate(-1)}>
-        <ArrowRight className="ml-2 h-4 w-4" />
-        رجوع
+        <button 
+          onClick={() => navigate(-1)} 
+          className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-card/60 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)] text-muted-foreground hover:text-white hover:bg-white/10 hover:border-white/20 transition-all sm:backdrop-blur-md group"
+          aria-label="إغلاق المنتج"
+        >
+          <X className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:scale-110" />
+        </button>
       </div>
 
       <div 
