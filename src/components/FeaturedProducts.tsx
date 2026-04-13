@@ -44,8 +44,8 @@ export function FeaturedProducts() {
                     style={{ backgroundColor: `${category.color}15` }}
                   ></div>
 
-                  <div className="relative h-56 w-full overflow-hidden bg-[#0c0a10] md:h-60">
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-[#0c0a10] to-transparent"></div>
+                  <div className="relative h-56 w-full overflow-hidden bg-surface-container-highest md:h-60">
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-surface-container-low/80 to-transparent"></div>
                     <img
                       src={product.image}
                       alt={product.title}
@@ -70,7 +70,7 @@ export function FeaturedProducts() {
                     </div>
                     {/* Discount Badge top right for featured products if we want, or bottom left. We put it top-right here since top-left is rating */}
                     {!product.outOfStock && product.originalPrice && product.originalPrice > product.basePrice && (
-                      <div className="absolute top-3 right-3 z-20 flex justify-end w-full pr-3">
+                      <div className="absolute top-3 right-3 z-20">
                         <span className="rounded-full bg-[#ff3b30] px-3 py-1 text-xs font-bold tracking-wider text-white shadow-sm">
                           -{Math.round(((product.originalPrice - product.basePrice) / product.originalPrice) * 100)}%
                         </span>
