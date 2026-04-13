@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
@@ -10,9 +11,7 @@ import { Terms } from "./pages/Terms";
 import { ProductDetails } from "./pages/ProductDetails";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { IntroLoader } from "./components/IntroLoader";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState, useCallback } from "react";
-import { products } from "./data/products";
+import { getProductBySlugOrId } from "./data/products";
 
 function DynamicTitle() {
   const location = useLocation();
@@ -21,18 +20,14 @@ function DynamicTitle() {
     let pageName = "الرئيسية";
     const path = location.pathname;
 
-    if (path.startsWith("/products/")) {
+    if (path === "/cart" || path === "/products/cart") {
+      pageName = "سلة المشتريات";
+    } else if (path === "/checkout" || path === "/products/checkout") {
+      pageName = "إتمام الطلب";
+    } else if (path.startsWith("/products/")) {
       const id = path.split("/products/")[1];
-      const safeId = id ? decodeURIComponent(id) : '';
-      const product = products.find(p => p.id === safeId || p.id === id);
-      if (product) {
-        // Enforce max 60 chars total (title prefix is 14 chars length: "زارز | ZARZ | ")
-        // 60 - 14 = 46 chars allowed for the product name
-        // However, standard HTML title length is usually measured as a total string, usually we just truncate if it's crazily long. Wait, user specified "Not exceed 60 characters" total.
-        pageName = product.title;
-      } else {
-        pageName = "تفاصيل المنتج";
-      }
+      const product = getProductBySlugOrId(id ? decodeURIComponent(id) : "");
+      pageName = product?.title || "تفاصيل المنتج";
     } else {
       switch (path) {
         case "/":
@@ -40,9 +35,6 @@ function DynamicTitle() {
           break;
         case "/products":
           pageName = "المنتجات";
-          break;
-        case "/cart":
-          pageName = "سلة المشتريات";
           break;
         case "/account":
           pageName = "حسابي";
@@ -53,26 +45,19 @@ function DynamicTitle() {
         case "/terms":
           pageName = "الشروط والأحكام";
           break;
-        case "/checkout":
-          pageName = "إتمام الطلب";
-          break;
         default:
           pageName = "الصفحة غير موجودة";
       }
     }
 
-    // Strict format: زارز | ZARZ | [Page Name or Product Name]
-    let fullTitle = `زارز | ZARZ | ${pageName}`;
-    if (fullTitle.length > 60) {
-      // 60 chars strict limit
-      const prefix = "زارز | ZARZ | ";
-      const maxNameLength = 60 - prefix.length - 3; // -3 for "..."
-      pageName = pageName.substring(0, maxNameLength) + "...";
-      fullTitle = `${prefix}${pageName}`;
+    const prefix = "زارز | ZARZ | ";
+    let title = `${prefix}${pageName}`;
+    if (title.length > 60) {
+      title = `${prefix}${pageName.slice(0, 60 - prefix.length - 3)}...`;
     }
 
-    document.title = fullTitle;
-  }, [location]);
+    document.title = title;
+  }, [location.pathname]);
 
   return null;
 }
@@ -82,7 +67,7 @@ export default function App() {
   const handleIntroFinished = useCallback(() => setLoaded(true), []);
 
   return (
-    <Router basename="/zarzofficial-up/">
+    <Router>
       <DynamicTitle />
       <ScrollToTop />
       {!loaded && <IntroLoader onFinished={handleIntroFinished} />}
@@ -94,10 +79,17 @@ export default function App() {
             <Route path="/products" element={<Store />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/products/cart" element={<Navigate to="/cart" replace />} />
             <Route path="/checkout" element={<Navigate to="/cart" replace />} />
+            <Route path="/products/checkout" element={<Navigate to="/cart" replace />} />
             <Route path="/account" element={<Account />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/store.html" element={<Navigate to="/products" replace />} />
+            <Route path="/account.html" element={<Navigate to="/account" replace />} />
+            <Route path="/contact.html" element={<Navigate to="/contact" replace />} />
+            <Route path="/terms.html" element={<Navigate to="/terms" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
         <Footer />
