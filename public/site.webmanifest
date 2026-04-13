@@ -1,0 +1,24 @@
+{
+  "name": "زارز | ZARZ",
+  "short_name": "ZARZ",
+  "icons": [
+    {
+      "src": "/zarzofficial-up/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/zarzofficial-up/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/zarzofficial-up/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1d0c26",
+  "background_color": "#120a16",
+  "display": "standalone"
+}
