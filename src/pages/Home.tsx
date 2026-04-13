@@ -1,30 +1,27 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { FeaturedProducts } from "../components/FeaturedProducts";
-import { MobileScrollReveal } from "../components/MobileScrollReveal";
 
 function FaqItem({ faq, isOpen, onClick }: { key?: React.Key, faq: { question: string, answer: string }, isOpen: boolean, onClick: () => void }) {
   return (
-    <MobileScrollReveal minHeight="85px">
-      <div
-        className={`perf-card cyber-glass-card rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border ${isOpen ? 'border-[#e11d48]/30 bg-[#e11d48]/5' : 'border-outline-variant/10 hover:border-outline-variant/30 bg-surface-container-low/30'}`}
-        onClick={onClick}
-      >
-        <div className="p-6 flex items-center justify-between">
-          <h3 className="text-lg font-bold text-on-surface">{faq.question}</h3>
-          <span className={`material-symbols-outlined transition-transform duration-300 ${isOpen ? 'text-[#e11d48]' : 'text-[#0ea5e9]'}`}>
-            {isOpen ? 'remove' : 'add'}
-          </span>
-        </div>
-        <div
-          className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-40 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
-        >
-          <p className="text-[#cbc3d9] leading-relaxed">
-            {faq.answer}
-          </p>
-        </div>
+    <div
+      className={`perf-card cyber-glass-card rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border ${isOpen ? 'border-[#e11d48]/30 bg-[#e11d48]/5' : 'border-outline-variant/10 hover:border-outline-variant/30 bg-surface-container-low/30'}`}
+      onClick={onClick}
+    >
+      <div className="p-6 flex items-center justify-between">
+        <h3 className="text-lg font-bold text-on-surface">{faq.question}</h3>
+        <span className={`material-symbols-outlined transition-transform duration-300 ${isOpen ? 'text-[#e11d48]' : 'text-[#0ea5e9]'}`}>
+          {isOpen ? 'remove' : 'add'}
+        </span>
       </div>
-    </MobileScrollReveal>
+      <div
+        className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-40 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <p className="text-[#cbc3d9] leading-relaxed">
+          {faq.answer}
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -162,119 +159,111 @@ export function Home() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-8">
             {/* AI Service - Large Card */}
-            <MobileScrollReveal minHeight="380px">
-              <div
-                className="perf-panel main-service-card main-service-card--wide md:col-span-8 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col justify-between overflow-hidden"
-                style={{ contain: "layout paint style" }}
-              >
-                <div className="main-service-card__bg mesh-gradient-bg"></div>
-                <div className="main-service-card__accent glowing-border-accent"></div>
-                <div className="relative z-20">
-                  <div className="main-service-card__icon-shell icon-glow-container mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:scale-110 md:transition-transform">
-                    <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="neurology">neurology</span>
-                  </div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="rounded-full border border-primary/30 bg-primary/20 px-4 py-1 text-xs font-bold text-[#f5d9fe] sm:backdrop-blur-md">حصري</span>
-                    <span className="text-primary/50 text-[10px] uppercase tracking-widest font-bold">Neural Core v2.0</span>
-                  </div>
-                  <h3 className="text-3xl md:text-5xl font-black mb-6 text-on-background tracking-tight text-glow">الذكاء الاصطناعي</h3>
-                  <p className="text-[#cbc3d9] text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-                    أتمتة ذكية وحلول تحليلية مبنية على أحدث تقنيات، لتطوير أعمالك بشكل غير مسبوق وتحقيق قفزات نوعية في الإنتاجية.
-                  </p>
+            <div
+              className="perf-panel main-service-card main-service-card--wide md:col-span-8 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col justify-between overflow-hidden"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
+              <div className="relative z-20">
+                <div className="main-service-card__icon-shell icon-glow-container mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:scale-110 md:transition-transform">
+                  <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="neurology">neurology</span>
                 </div>
-                <div className="relative z-20 mt-auto">
-                  <Link to="/products?category=ai" className="main-service-card__link group/link inline-flex items-center gap-3 text-xl font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
-                    <span>تفاصيل الخدمة</span>
-                    <span className="material-symbols-outlined transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
-                  </Link>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="rounded-full border border-primary/30 bg-primary/20 px-4 py-1 text-xs font-bold text-[#f5d9fe] sm:backdrop-blur-md">حصري</span>
+                  <span className="text-primary/50 text-[10px] uppercase tracking-widest font-bold">Neural Core v2.0</span>
                 </div>
+                <h3 className="text-3xl md:text-5xl font-black mb-6 text-on-background tracking-tight text-glow">الذكاء الاصطناعي</h3>
+                <p className="text-[#cbc3d9] text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
+                  أتمتة ذكية وحلول تحليلية مبنية على أحدث تقنيات، لتطوير أعمالك بشكل غير مسبوق وتحقيق قفزات نوعية في الإنتاجية.
+                </p>
               </div>
-            </MobileScrollReveal>
+              <div className="relative z-20 mt-auto">
+                <Link to="/products?category=ai" className="main-service-card__link group/link inline-flex items-center gap-3 text-xl font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
+                  <span>تفاصيل الخدمة</span>
+                  <span className="material-symbols-outlined transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
+                </Link>
+              </div>
+            </div>
 
             {/* Social Media - Small Vertical */}
-            <MobileScrollReveal minHeight="380px">
-              <div
-                className="perf-panel main-service-card main-service-card--tall md:col-span-4 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col items-center justify-center overflow-hidden text-center"
-                style={{ contain: "layout paint style" }}
-              >
-                <div className="main-service-card__bg mesh-gradient-bg"></div>
-                <div className="main-service-card__accent glowing-border-accent"></div>
-                <div className="relative z-20">
-                  <div className="main-service-card__icon-shell icon-glow-container mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:rotate-12 md:transition-transform">
-                    <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="campaign">campaign</span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 text-on-background tracking-tight">إدارة المنصات</h3>
-                  <p className="text-[#cbc3d9] text-lg leading-relaxed mb-8">
-                    نصنع محتوى يتفاعل معه العالم بأسلوب احترافي وجذاب يضمن وصول رسالتك للجمهور المستهدف.
-                  </p>
-                  <div className="mt-auto">
-                    <Link to="/products?category=social" className="main-service-card__link group/link inline-flex items-center gap-3 font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
-                      <span>تصفح الباقات</span>
-                      <span className="material-symbols-outlined text-sm transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
-                    </Link>
-                  </div>
+            <div
+              className="perf-panel main-service-card main-service-card--tall md:col-span-4 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col items-center justify-center overflow-hidden text-center"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
+              <div className="relative z-20">
+                <div className="main-service-card__icon-shell icon-glow-container mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:rotate-12 md:transition-transform">
+                  <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="campaign">campaign</span>
                 </div>
-              </div>
-            </MobileScrollReveal>
-
-            {/* Gaming - Small Vertical */}
-            <MobileScrollReveal minHeight="380px">
-              <div
-                className="perf-panel main-service-card main-service-card--tall md:col-span-4 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col items-center justify-center overflow-hidden text-center"
-                style={{ contain: "layout paint style" }}
-              >
-                <div className="main-service-card__bg mesh-gradient-bg"></div>
-                <div className="main-service-card__accent glowing-border-accent"></div>
-                <div className="relative z-20">
-                  <div className="main-service-card__icon-shell icon-glow-container mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:scale-110 md:transition-transform">
-                    <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="sports_esports">sports_esports</span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 text-on-background tracking-tight">خدمات الألعاب</h3>
-                  <p className="text-[#cbc3d9] text-lg leading-relaxed mb-8">
-                    شحن، اشتراكات، وأدوات احترافية لأفضل تجربة لعب. كل ما يحتاجه المحترفون في مكان واحد.
-                  </p>
-                  <div className="mt-auto">
-                    <Link to="/products?category=gaming" className="main-service-card__link group/link inline-flex items-center gap-3 font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
-                      <span>تصفح العروض</span>
-                      <span className="material-symbols-outlined text-sm transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </MobileScrollReveal>
-
-            {/* Web Services - Medium Landscape */}
-            <MobileScrollReveal minHeight="380px">
-              <div
-                className="perf-panel main-service-card main-service-card--wide md:col-span-8 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col justify-between overflow-hidden"
-                style={{ contain: "layout paint style" }}
-              >
-                <div className="main-service-card__bg mesh-gradient-bg"></div>
-                <div className="main-service-card__accent glowing-border-accent"></div>
-                <div className="relative z-20">
-                  <div className="flex items-start justify-between gap-8">
-                    <div className="flex-1">
-                      <div className="main-service-card__icon-shell icon-glow-container mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:translate-x-4 md:transition-transform">
-                        <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="terminal">terminal</span>
-                      </div>
-                      <h3 className="text-3xl md:text-5xl font-black mb-6 text-on-background tracking-tight">خدمات الويب</h3>
-                      <p className="text-[#cbc3d9] text-xl leading-relaxed mb-8 max-w-xl">
-                        برمجة وتصميم واجهات عصرية تضمن أفضل تجربة مستخدم وأداء فائق السرعة مع بنية تحتية رقمية متينة.
-                      </p>
-                    </div>
-                    <div className="hidden lg:block">
-                      <span className="material-symbols-outlined text-primary/5 text-[180px] absolute -left-12 -top-12 select-none pointer-events-none rotate-12" data-icon="code">code</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative z-20">
-                  <Link to="/products?category=web" className="main-service-card__link group/link inline-flex items-center gap-3 text-xl font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
-                    <span>اكتشف المزيد</span>
-                    <span className="material-symbols-outlined transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
+                <h3 className="text-2xl md:text-3xl font-black mb-6 text-on-background tracking-tight">إدارة المنصات</h3>
+                <p className="text-[#cbc3d9] text-lg leading-relaxed mb-8">
+                  نصنع محتوى يتفاعل معه العالم بأسلوب احترافي وجذاب يضمن وصول رسالتك للجمهور المستهدف.
+                </p>
+                <div className="mt-auto">
+                  <Link to="/products?category=social" className="main-service-card__link group/link inline-flex items-center gap-3 font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
+                    <span>تصفح الباقات</span>
+                    <span className="material-symbols-outlined text-sm transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
                   </Link>
                 </div>
               </div>
-            </MobileScrollReveal>
+            </div>
+
+            {/* Gaming - Small Vertical */}
+            <div
+              className="perf-panel main-service-card main-service-card--tall md:col-span-4 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col items-center justify-center overflow-hidden text-center"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
+              <div className="relative z-20">
+                <div className="main-service-card__icon-shell icon-glow-container mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:scale-110 md:transition-transform">
+                  <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="sports_esports">sports_esports</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black mb-6 text-on-background tracking-tight">خدمات الألعاب</h3>
+                <p className="text-[#cbc3d9] text-lg leading-relaxed mb-8">
+                  شحن، اشتراكات، وأدوات احترافية لأفضل تجربة لعب. كل ما يحتاجه المحترفون في مكان واحد.
+                </p>
+                <div className="mt-auto">
+                  <Link to="/products?category=gaming" className="main-service-card__link group/link inline-flex items-center gap-3 font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
+                    <span>تصفح العروض</span>
+                    <span className="material-symbols-outlined text-sm transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Web Services - Medium Landscape */}
+            <div
+              className="perf-panel main-service-card main-service-card--wide md:col-span-8 cyber-glass-card rounded-[2.5rem] p-7 md:p-12 group flex min-h-[24rem] md:min-h-[28rem] flex-col justify-between overflow-hidden"
+              style={{ contain: "layout paint style" }}
+            >
+              <div className="main-service-card__bg mesh-gradient-bg"></div>
+              <div className="main-service-card__accent glowing-border-accent"></div>
+              <div className="relative z-20">
+                <div className="flex items-start justify-between gap-8">
+                  <div className="flex-1">
+                    <div className="main-service-card__icon-shell icon-glow-container mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5 md:group-hover:translate-x-4 md:transition-transform">
+                      <span className="material-symbols-outlined icon-gradient text-5xl md:drop-shadow-[0_0_15px_rgba(208,188,255,0.6)]" data-icon="terminal">terminal</span>
+                    </div>
+                    <h3 className="text-3xl md:text-5xl font-black mb-6 text-on-background tracking-tight">خدمات الويب</h3>
+                    <p className="text-[#cbc3d9] text-xl leading-relaxed mb-8 max-w-xl">
+                      برمجة وتصميم واجهات عصرية تضمن أفضل تجربة مستخدم وأداء فائق السرعة مع بنية تحتية رقمية متينة.
+                    </p>
+                  </div>
+                  <div className="hidden lg:block">
+                    <span className="material-symbols-outlined text-primary/5 text-[180px] absolute -left-12 -top-12 select-none pointer-events-none rotate-12" data-icon="code">code</span>
+                  </div>
+                </div>
+              </div>
+              <div className="relative z-20">
+                <Link to="/products?category=web" className="main-service-card__link group/link inline-flex items-center gap-3 text-xl font-black text-primary transition-[gap,transform,color] duration-300 md:hover:gap-6">
+                  <span>اكتشف المزيد</span>
+                  <span className="material-symbols-outlined transition-transform duration-300 md:group-hover/link:-translate-x-2">arrow_back</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -293,94 +282,82 @@ export function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 
             {/* Card 1 */}
-            <MobileScrollReveal minHeight="165px">
-              <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(208,188,255,0.08)] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">01</div>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(208,188,255,0.2)] transition-all duration-500">
-                    <span className="material-symbols-outlined text-[22px] text-primary">bolt</span>
-                  </div>
-                  <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">تنفيذ فوري</h4>
-                  <p className="text-xs md:text-[13px] text-outline leading-relaxed">طلبك يبدأ خلال دقائق من التأكيد بدون أي تأخير</p>
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(208,188,255,0.08)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">01</div>
+              <div className="relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(208,188,255,0.2)] transition-all duration-500">
+                  <span className="material-symbols-outlined text-[22px] text-primary">bolt</span>
                 </div>
+                <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">تنفيذ فوري</h4>
+                <p className="text-xs md:text-[13px] text-outline leading-relaxed">طلبك يبدأ خلال دقائق من التأكيد بدون أي تأخير</p>
               </div>
-            </MobileScrollReveal>
+            </div>
 
             {/* Card 2 */}
-            <MobileScrollReveal minHeight="165px">
-              <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#3b82f6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(59,130,246,0.08)] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">02</div>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-500">
-                    <span className="material-symbols-outlined text-[22px] text-[#3b82f6]">shield</span>
-                  </div>
-                  <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">أمان كامل</h4>
-                  <p className="text-xs md:text-[13px] text-outline leading-relaxed">حساباتك محمية ولا نطلب أي بيانات سرية مطلقاً</p>
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#3b82f6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(59,130,246,0.08)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">02</div>
+              <div className="relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-500">
+                  <span className="material-symbols-outlined text-[22px] text-[#3b82f6]">shield</span>
                 </div>
+                <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">أمان كامل</h4>
+                <p className="text-xs md:text-[13px] text-outline leading-relaxed">حساباتك محمية ولا نطلب أي بيانات سرية مطلقاً</p>
               </div>
-            </MobileScrollReveal>
+            </div>
 
             {/* Card 3 */}
-            <MobileScrollReveal minHeight="165px">
-              <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#10b981]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(16,185,129,0.08)] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#10b981]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">03</div>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-500">
-                    <span className="material-symbols-outlined text-[22px] text-[#10b981]">headset_mic</span>
-                  </div>
-                  <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">دعم ٢٤/٧</h4>
-                  <p className="text-xs md:text-[13px] text-outline leading-relaxed">فريق متخصص جاهز لمساعدتك في أي وقت تحتاجه</p>
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#10b981]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(16,185,129,0.08)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#10b981]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">03</div>
+              <div className="relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-500">
+                  <span className="material-symbols-outlined text-[22px] text-[#10b981]">headset_mic</span>
                 </div>
+                <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">دعم ٢٤/٧</h4>
+                <p className="text-xs md:text-[13px] text-outline leading-relaxed">فريق متخصص جاهز لمساعدتك في أي وقت تحتاجه</p>
               </div>
-            </MobileScrollReveal>
+            </div>
 
             {/* Card 4 */}
-            <MobileScrollReveal minHeight="165px">
-              <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#f59e0b]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(245,158,11,0.08)] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">04</div>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-500">
-                    <span className="material-symbols-outlined text-[22px] text-[#f59e0b]">payments</span>
-                  </div>
-                  <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">دفع مرن</h4>
-                  <p className="text-xs md:text-[13px] text-outline leading-relaxed">ندعم التحويل البنكي والكاش حسب ما يناسبك</p>
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#f59e0b]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(245,158,11,0.08)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">04</div>
+              <div className="relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-500">
+                  <span className="material-symbols-outlined text-[22px] text-[#f59e0b]">payments</span>
                 </div>
+                <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">دفع مرن</h4>
+                <p className="text-xs md:text-[13px] text-outline leading-relaxed">ندعم التحويل البنكي والكاش حسب ما يناسبك</p>
               </div>
-            </MobileScrollReveal>
+            </div>
 
             {/* Card 5 */}
-            <MobileScrollReveal minHeight="165px">
-              <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#e11d48]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(225,29,72,0.08)] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#e11d48]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">05</div>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-[#e11d48]/10 border border-[#e11d48]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(225,29,72,0.2)] transition-all duration-500">
-                    <span className="material-symbols-outlined text-[22px] text-[#e11d48]">workspace_premium</span>
-                  </div>
-                  <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">جودة مضمونة</h4>
-                  <p className="text-xs md:text-[13px] text-outline leading-relaxed">ضمان زارز الملكي على كل خدمة نقدّمها لك</p>
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#e11d48]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(225,29,72,0.08)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#e11d48]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">05</div>
+              <div className="relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-[#e11d48]/10 border border-[#e11d48]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(225,29,72,0.2)] transition-all duration-500">
+                  <span className="material-symbols-outlined text-[22px] text-[#e11d48]">workspace_premium</span>
                 </div>
+                <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">جودة مضمونة</h4>
+                <p className="text-xs md:text-[13px] text-outline leading-relaxed">ضمان زارز الملكي على كل خدمة نقدّمها لك</p>
               </div>
-            </MobileScrollReveal>
+            </div>
 
             {/* Card 6 */}
-            <MobileScrollReveal minHeight="165px">
-              <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#8b5cf6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(139,92,246,0.08)] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">06</div>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-500">
-                    <span className="material-symbols-outlined text-[22px] text-[#8b5cf6]">trending_up</span>
-                  </div>
-                  <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">نتائج حقيقية</h4>
-                  <p className="text-xs md:text-[13px] text-outline leading-relaxed">خدمات فعلية بنتائج ملموسة وقابلة للقياس</p>
+            <div className="perf-card group relative rounded-[1.25rem] p-5 md:p-7 bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 hover:border-[#8b5cf6]/30 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(139,92,246,0.08)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-4 left-4 text-[3.5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">06</div>
+              <div className="relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-500">
+                  <span className="material-symbols-outlined text-[22px] text-[#8b5cf6]">trending_up</span>
                 </div>
+                <h4 className="text-sm md:text-[15px] font-black text-on-surface mb-2">نتائج حقيقية</h4>
+                <p className="text-xs md:text-[13px] text-outline leading-relaxed">خدمات فعلية بنتائج ملموسة وقابلة للقياس</p>
               </div>
-            </MobileScrollReveal>
+            </div>
 
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowRight, ShoppingCart, ShieldCheck, HeadphonesIcon, Zap, CheckCircle2, X } from "lucide-react";
+import { ArrowRight, ShoppingCart, ShieldCheck, HeadphonesIcon, Zap, CheckCircle2 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { getCategoryLabel, getProductBySlugOrId, type ProductVariationGroup } from "../data/products";
 import { useCart, type CartVariationSelection } from "../lib/CartContext";
@@ -141,38 +141,21 @@ export function ProductDetails() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-16 relative">
-      {/* Top action bar: Prevents any overlaps with navbar by using standard document flow */}
-      <div className="flex items-center justify-between w-full mb-8 relative z-20">
-        <div 
-          className="flex items-center text-muted-foreground hover:text-primary transition-colors cursor-pointer group" 
-          onClick={() => navigate(-1)}
-        >
-          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          <span className="font-semibold text-lg">العودة للمتجر</span>
-        </div>
+    <div className="container mx-auto px-4 py-12 md:py-20">
+      <Link to="/products" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8">
+        <ArrowRight className="ml-2 h-4 w-4" />
+        العودة للمتجر
+      </Link>
 
-        <button 
-          onClick={() => navigate(-1)} 
-          className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-card/60 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)] text-muted-foreground hover:text-white hover:bg-white/10 hover:border-white/20 transition-all sm:backdrop-blur-md group"
-          aria-label="إغلاق المنتج"
-        >
-          <X className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:scale-110" />
-        </button>
-      </div>
-
-      <div 
-        className="perf-panel grid grid-cols-1 lg:grid-cols-2 gap-12 bg-card/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 md:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden"
-        style={{ contain: "layout paint style" }}
-      >
+      <div className="perf-panel grid grid-cols-1 lg:grid-cols-2 gap-12 bg-card/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 md:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-        <div className="relative rounded-2xl overflow-hidden aspect-square bg-surface-container-highest border border-white/5 shadow-inner z-10">
-          <img src={product.image} alt={product.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.03]" referrerPolicy="no-referrer" />
+        <div className="relative rounded-2xl overflow-hidden aspect-square bg-background/50 border border-white/5 shadow-inner z-10">
+          <img src={product.image} alt={product.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
 
-        <div className="flex flex-col z-10 w-full relative">
+        <div className="flex flex-col z-10">
           <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold mb-4 w-fit border border-primary/20 shadow-[0_0_10px_rgba(255,0,122,0.1)]">
             {getCategoryLabel(product.category)}
           </div>
